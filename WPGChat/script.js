@@ -1,6 +1,6 @@
-const DONATE_TEMPLATE_MESSAGE = `Mandou <span>{currency} {value}</span>!`;
-const SPONSOR_TEMPLATE_MESSAGE = `Se tornou {if_platform(youtube,twitch)::membro::sub} por <span>{months}</span> meses!`;
-const SPONSOR_GIFT_TEMPLATE_MESSAGE = `Mandou <span>{count} {if_platform(youtube,twitch)::membros::subs}</span> de presente!`;
+const DONATE_TEMPLATE_MESSAGE = `<span>{author_display_name}</span>, mandou <span>{currency} {value}</span>!`;
+const SPONSOR_TEMPLATE_MESSAGE = `<span>{author_display_name}</span>, se tornou {if_platform(youtube,twitch)::membro::sub} por <span>{months}</span> meses!`;
+const SPONSOR_GIFT_TEMPLATE_MESSAGE = `<span>{author_display_name}</span>, mandou <span>{count} {if_platform(youtube,twitch)::membros::subs}</span> de presente!`;
 const RAID_TEMPLATE_MESSAGE = `<span>{author_display_name}</span> acabou de chegar com {viewer_count} espectadores!`;
 const RAID_VIEWER_COUNT_DEFAULT = "seus";
 
