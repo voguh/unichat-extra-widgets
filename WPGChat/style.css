@@ -4,8 +4,9 @@
     --badge-size: 18px;
     --emote-size: 28px;
 
-    --general-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
     --message-animation: fadeIn 250ms ease-in;
+
+    --accent-color: #fcc419;
 
     --author-pill-bg: #f8f9fa;
     --author-pill-color: #212529;
@@ -16,8 +17,6 @@
     --author-pill-broadcaster-bg: #12b886;
     --author-pill-broadcaster-color: #f8f9fa;
 
-    --accent-color: #fcc419;
-
     --message-content-bg: #212529;
     --message-content-color: #f8f9fa;
     --donate-content-bg: #1971c2;
@@ -27,7 +26,7 @@
     --spogift-content-bg: #f08c00;
     --spogift-content-color: #212529;
     --raid-content-bg: #66a80f;
-    --raid-content-color: #f8f9fa;
+    --raid-content-color: #212529;
 }
 
 html, body {
@@ -48,60 +47,13 @@ html, body {
 }
 
 /* <================================================[ SHARED STYLE ]================================================> */
-#main-container > div {
+#main-container > .message-item {
     position: relative;
     animation: var(--message-animation);
 }
 
 #main-container > div:not(:first-child) {
     margin-top: 8px;
-}
-
-#main-container > div > .author-meta {
-    width: fit-content;
-    max-width: calc(100vw - 64px);
-    position: absolute;
-    top: 0;
-    left: 8px;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: var(--author-pill-bg);
-
-    overflow: hidden;
-}
-
-#main-container > div > .author-meta > .badges {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-}
-
-#main-container > div > .author-meta > .badges:empty {
-    display: none;
-}
-
-#main-container > div > .author-meta > .badges > img {
-    width: var(--badge-size);
-    height: var(--badge-size);
-    border-radius: 2px;
-}
-
-#main-container > div > .author-meta > .name {
-    flex: 1 1 auto;
-    color: var(--author-pill-color);
-    font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-clamp: 1;
-    white-space: nowrap;
-
 }
 /* <==============================================[ END SHARED STYLE ]==============================================> */
 
@@ -123,14 +75,6 @@ html, body {
 #main-container > .message-item.message-item--BROADCASTER {
     --author-pill-bg: var(--author-pill-broadcaster-bg);
     --author-pill-color: var(--author-pill-broadcaster-color);
-}
-
-#main-container > .message-item.left > .author-meta {
-    left: calc(8px + (var(--badge-size) + 16px) + 16px);
-}
-
-#main-container > .message-item.right > .author-meta {
-    right: calc(8px + (var(--badge-size) + 16px) + 16px);
 }
 
 #main-container > .message-item > .author-avatar {
@@ -158,12 +102,66 @@ html, body {
     object-fit: cover;
 }
 
+#main-container > .message-item.left > .author-meta {
+    left: calc(8px + (var(--badge-size) + 16px) + 16px);
+}
+
+#main-container > .message-item.right > .author-meta {
+    right: calc(8px + (var(--badge-size) + 16px) + 16px);
+}
+
+#main-container > .message-item > .author-meta {
+    width: fit-content;
+    max-width: calc(100vw - 64px);
+    position: absolute;
+    top: 0;
+    left: 8px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--author-pill-bg);
+
+    overflow: hidden;
+}
+
+#main-container > .message-item > .author-meta > .badges {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+#main-container > .message-item > .author-meta > .badges:empty {
+    display: none;
+}
+
+#main-container > .message-item > .author-meta > .badges > img {
+    width: var(--badge-size);
+    height: var(--badge-size);
+    border-radius: 2px;
+}
+
+#main-container > .message-item > .author-meta > .name {
+    flex: 1 1 auto;
+    color: var(--author-pill-color);
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 1;
+    white-space: nowrap;
+
+}
+
 #main-container > .message-item > .message {
     padding: calc(((var(--badge-size) + 8px) / 2) + 8px) 8px 8px 8px;
     border-radius: 4px;
     background: var(--message-content-bg);
     color: var(--message-content-color);
-    box-shadow: var(--general-box-shadow);
     white-space: normal;
     word-break: break-word;
 }
@@ -205,49 +203,61 @@ html, body {
 
 /* <============================================[ DONATE MESSAGE STYLE ]============================================> */
 #main-container > .donate-item {
-    --author-pill-bg: #343a40;
-    --author-pill-color: #FFFFFF;
-}
-
-#main-container > .donate-item > .author-meta {
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#main-container > .donate-item > .message-wrapper {
-    min-height: 64px;
-    padding: 8px;
-    border-radius: 4px;
     background: var(--donate-content-bg);
     color: var(--donate-content-color);
-    box-shadow: var(--general-box-shadow);
-}
-
-#main-container > .donate-item > .message-wrapper > .donate-meta {
-    font-weight: bold;
-    text-align: center;
-}
-
-#main-container > .donate-item > .message-wrapper > .donate-meta > span {
-    font-weight: bolder;
-    color: var(--accent-color);
-}
-
-#main-container > .donate-item > .message-wrapper > .message {
-    margin-top: 8px;
-    background: rgba(0, 0, 0, 0.25);
     border-radius: 4px;
+}
+
+#main-container > .donate-item > .element-item-header {
+    background: rgba(0, 0, 0, 0.25);
     padding: 8px;
-    text-align: center;
+    display: flex;
+    gap: 8px;
+}
+
+#main-container > .donate-item > .element-item-header > .author-photo {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-container > .donate-item > .element-item-header > .author-photo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#main-container > .donate-item > .element-item-header > .author-meta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#main-container > .donate-item > .element-item-header > .author-meta > .title {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+#main-container > .donate-item > .element-item-header > .author-meta > .subtitle {
+    font-weight: bolder;
+    opacity: 0.75;
+}
+
+#main-container > .donate-item > .element-item-body {
+    padding: 8px;
     white-space: normal;
     word-break: break-word;
 }
 
-#main-container > .donate-item > .message-wrapper > .message:empty {
+#main-container > .donate-item > .element-item-body:empty {
     display: none;
 }
 
-#main-container > .donate-item > .message-wrapper > .message > img {
+#main-container > .donate-item > .element-item-body > img {
     height: var(--emote-size);
     vertical-align: middle;
 }
@@ -255,121 +265,154 @@ html, body {
 
 /* <============================================[ SPONSOR MESSAGE STYLE ]============================================> */
 #main-container > .sponsor-item {
-    --author-pill-bg: #343a40;
-    --author-pill-color: #FFFFFF;
-}
-
-#main-container > .sponsor-item > .author-meta {
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#main-container > .sponsor-item > .message-wrapper {
-    min-height: 64px;
-    padding: 8px;
-    border-radius: 4px;
     background: var(--sponsor-content-bg);
     color: var(--sponsor-content-color);
-    box-shadow: var(--general-box-shadow);
-}
-
-#main-container > .sponsor-item > .message-wrapper > .sponsor-meta {
-    font-weight: bold;
-    text-align: center;
-}
-
-#main-container > .sponsor-item > .message-wrapper > .sponsor-meta > span {
-    font-weight: bolder;
-    color: var(--accent-color);
-}
-
-#main-container > .sponsor-item > .message-wrapper > .message {
-    margin-top: 8px;
-    background: rgba(0, 0, 0, 0.25);
     border-radius: 4px;
+}
+
+#main-container > .sponsor-item > .element-item-header {
+    background: rgba(0, 0, 0, 0.25);
     padding: 8px;
-    text-align: center;
+    display: flex;
+    gap: 8px;
+}
+
+#main-container > .sponsor-item > .element-item-header > .author-photo {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-container > .sponsor-item > .element-item-header > .author-photo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#main-container > .sponsor-item > .element-item-header > .author-meta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#main-container > .sponsor-item > .element-item-header > .author-meta > .title {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+#main-container > .sponsor-item > .element-item-header > .author-meta > .subtitle {
+    font-weight: bolder;
+    opacity: 0.75;
+}
+
+#main-container > .sponsor-item > .element-item-body {
+    padding: 8px;
     white-space: normal;
     word-break: break-word;
 }
 
-#main-container > .sponsor-item > .message-wrapper > .message:empty {
+#main-container > .sponsor-item > .element-item-body:empty {
     display: none;
 }
 
-#main-container > .sponsor-item > .message-wrapper > .message > img {
+#main-container > .sponsor-item > .element-item-body > img {
     height: var(--emote-size);
     vertical-align: middle;
 }
 /* <==========================================[ END SPONSOR MESSAGE STYLE ]==========================================> */
 
 /* <=========================================[ SPONSOR GIFT MESSAGE STYLE ]=========================================> */
-#main-container > .spogift-item > .message {
-    position: relative;
-    padding: 8px;
-    text-align: center;
-    border-radius: 4px;
+#main-container > .spogift-item {
     background: var(--spogift-content-bg);
     color: var(--spogift-content-color);
-    font-weight: bold;
-    box-shadow: var(--general-box-shadow);
+    border-radius: 4px;
+}
+
+#main-container > .spogift-item > .element-item-header {
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+#main-container > .spogift-item > .element-item-header > .author-photo {
+    width: 64px;
     height: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
-#main-container > .spogift-item > .message:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f06b";
-    font-size: calc(64px + 16px);
-    position: absolute;
-    bottom: -8px;
-    right: -8px;
-    transform: rotate(-45deg);
-    color: rgba(255, 255, 255, 0.25);
-    z-index: 0;
+#main-container > .spogift-item > .element-item-header > .author-photo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-#main-container > .spogift-item > .message > span {
-    z-index: 1;
-    white-space: normal;
-    word-break: break-word;
+#main-container > .spogift-item > .element-item-header > .author-meta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
 }
 
-#main-container > .spogift-item > .message > span > span {
+#main-container > .spogift-item > .element-item-header > .author-meta > .title {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+#main-container > .spogift-item > .element-item-header > .author-meta > .subtitle {
     font-weight: bolder;
+    opacity: 0.75;
 }
 /* <=======================================[ END SPONSOR GIFT MESSAGE STYLE ]=======================================> */
 
 /* <=============================================[ RAID MESSAGE STYLE ]=============================================> */
 #main-container > .raid-item {
-    margin-top: 8px;
-    position: relative;
-}
-
-#main-container > .raid-item > .message-wrapper {
-    padding: 8px;
-    border-radius: 4px;
     background: var(--raid-content-bg);
     color: var(--raid-content-color);
-    font-weight: bold;
-    box-shadow: var(--general-box-shadow);
+    border-radius: 4px;
+}
+
+#main-container > .raid-item > .element-item-header {
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+#main-container > .raid-item > .element-item-header > .author-photo {
+    width: 64px;
     height: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
-    white-space: normal;
-    word-break: break-word;
 }
 
-#main-container > .raid-item > .message-wrapper > span {
-    text-align: center;
+#main-container > .raid-item > .element-item-header > .author-photo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-#main-container > .raid-item > .message-wrapper > span > span {
+#main-container > .raid-item > .element-item-header > .author-meta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#main-container > .raid-item > .element-item-header > .author-meta > .title {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+#main-container > .raid-item > .element-item-header > .author-meta > .subtitle {
     font-weight: bolder;
+    opacity: 0.75;
 }
 /* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */

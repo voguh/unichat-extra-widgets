@@ -17,34 +17,58 @@
 
 <script type="text/template" id="donate_item">
     <div class="donate-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
-        <div class="message-wrapper">
-            <div class="donate-meta">{donate_meta}</div>
-            <div class="message">{message_text}</div>
+        <div class="element-item-header">
+            <div class="author-photo">
+                <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+            </div>
+            <div class="author-meta">
+                <div class="title">{author_display_name}</div>
+                <div class="subtitle">{donate_meta}</div>
+            </div>
         </div>
+        <div class="element-item-body">{message_text}</div>
     </div>
 </script>
 
 <script type="text/template" id="sponsor_item">
     <div class="sponsor-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
-        <div class="message-wrapper">
-            <div class="sponsor-meta">{sponsor_meta}</div>
-            <div class="message">{message_text}</div>
+        <div class="element-item-header">
+            <div class="author-photo">
+                <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+            </div>
+            <div class="author-meta">
+                <div class="title">{author_display_name}</div>
+                <div class="subtitle">{sponsor_meta}</div>
+            </div>
         </div>
+        <div class="element-item-body">{message_text}</div>
     </div>
 </script>
 
 <script type="text/template" id="sponsor-gift_item">
     <div class="spogift-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
-        <div class="message">
-            <span>{sponsor_gift_meta}</span>
+        <div class="element-item-header">
+            <div class="author-photo">
+                <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+            </div>
+            <div class="author-meta">
+                <div class="title">{author_display_name}</div>
+                <div class="subtitle">{sponsor_gift_meta}</div>
+            </div>
         </div>
     </div>
 </script>
 
 <script type="text/template" id="raid_item">
     <div class="raid-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
-        <div class="message-wrapper">
-            <span>{raid_meta}</span>
+        <div class="element-item-header">
+            <div class="author-photo">
+                <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+            </div>
+            <div class="author-meta">
+                <div class="title">{author_display_name}</div>
+                <div class="subtitle">{raid_meta}</div>
+            </div>
         </div>
     </div>
 </script>
