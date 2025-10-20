@@ -1,0 +1,228 @@
+:root {
+    --badge-size: 18px;
+    --emote-size: 28px;
+
+    --event-item-in-animation: fadeIn 500ms linear;
+
+    --plt-black: #000000;
+    --plt-maroon: #800000;
+    --plt-green: #008000;
+    --plt-olive: #808000;
+    --plt-navy: #000080;
+    --plt-purple: #800080;
+    --plt-teal: #008080;
+    --plt-silver: #c0c0c0;
+    --plt-gray: #808080;
+    --plt-red: #ff0000;
+    --plt-lime: #00ff00;
+    --plt-yellow: #ffff00;
+    --plt-blue: #0000ff;
+    --plt-fuchsia: #ff00ff;
+    --plt-aqua: #00ffff;
+    --plt-white: #ffffff;
+}
+
+html, body {
+    font-family: monospace;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#main-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+    padding: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* <================================================[ SHARED STYLE ]================================================> */
+#main-container > div {
+    flex-shrink: 0;
+    position: relative;
+    border-top: 2px solid var(--plt-white);
+    border-left: 2px solid var(--plt-white);
+    border-bottom: 2px solid var(--plt-black);
+    border-right: 2px solid var(--plt-black);
+    overflow: hidden;
+    background: var(--plt-silver);
+    animation: var(--event-item-in-animation);
+}
+
+#main-container > div:not(:first-child) {
+    margin-top: 8px;
+}
+
+#main-container > div > .event-item-header {
+    height: var(--badge-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    background: var(--plt-gray);
+    color: var(--plt-white);
+}
+
+#main-container > div > .event-item-header > .badges {
+    width: fit-content;
+    height: var(--badge-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+#main-container > div > .event-item-header > .badges:empty {
+    display: none;
+}
+
+#main-container > div > .event-item-header > .badges > img {
+    width: var(--badge-size);
+    height: var(--badge-size);
+    border-radius: 2px;
+}
+
+#main-container > div > .event-item-header > .name {
+    flex: 1 1 auto;
+    height: var(--badge-size);
+    width: calc(var(--maximum-width) - (var(--badge-size) * 2) - 48px);
+    color: var(--event-item-header-color);
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+#main-container > div > .event-item-header > .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+#main-container > div > .event-item-header > .controls > i {
+    color: var(--plt-black);
+    background:var(--plt-silver);
+    padding: 4px;
+    width: calc(var(--badge-size) - 12px);
+    height: calc(var(--badge-size) - 12px);
+    border-top: 2px solid var(--plt-white);
+    border-left: 2px solid var(--plt-white);
+    border-bottom: 2px solid var(--plt-black);
+    border-right: 2px solid var(--plt-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-container > div > .event-item-header > .controls > i:nth-child(1) {
+    font-size: 10px;
+}
+
+#main-container > div > .event-item-header > .controls > i:nth-child(2) {
+    font-size: 12px;
+}
+
+#main-container > div > .event-item-body {
+    padding: 8px;
+    color: var(--plt-black);
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > div > .event-item-body > div[class*="meta"] {
+    text-align: center;
+    font-weight: bold;
+}
+
+#main-container > div > .event-item-body > span,
+#main-container > div > .event-item-body > div[class*="meta"] > span {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--plt-navy);
+}
+
+#main-container > div > .event-item-body > .message {
+    margin-top: 8px;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > div > .event-item-body > .message:empty {
+    display: none;
+}
+
+#main-container > div > .event-item-body > .message > img {
+    height: var(--emote-size);
+    vertical-align: middle;
+}
+/* <==============================================[ END SHARED STYLE ]==============================================> */
+
+
+
+/* <============================================[ SIMPLE MESSAGE STYLE ]============================================> */
+#main-container > .message-item > .event-item-body > img {
+    height: var(--emote-size);
+    vertical-align: middle;
+}
+/* <==========================================[ END SIMPLE MESSAGE STYLE ]==========================================> */
+
+
+
+/* <============================================[ DONATE MESSAGE STYLE ]============================================> */
+#main-container > .donate-item > .event-item-header {
+    background: var(--plt-olive);
+    color: var(--plt-white);
+}
+/* <==========================================[ END DONATE MESSAGE STYLE ]==========================================> */
+
+
+
+/* <============================================[ SPONSOR MESSAGE STYLE ]============================================> */
+#main-container > .sponsor-item > .event-item-header {
+    background: var(--plt-navy);
+    color: var(--plt-white);
+}
+/* <==========================================[ END SPONSOR MESSAGE STYLE ]==========================================> */
+
+
+
+/* <=========================================[ SPONSOR GIFT MESSAGE STYLE ]=========================================> */
+#main-container > .spogift-item > .event-item-header {
+    background: var(--plt-navy);
+    color: var(--plt-white);
+}
+
+#main-container > .spogift-item > .event-item-body {
+    text-align: center;
+    font-weight: bold;
+}
+/* <=======================================[ END SPONSOR GIFT MESSAGE STYLE ]=======================================> */
+
+
+
+/* <=============================================[ RAID MESSAGE STYLE ]=============================================> */
+#main-container > .raid-item > .event-item-header {
+    background: var(--plt-green);
+    color: var(--plt-white);
+}
+
+#main-container > .raid-item > .event-item-body {
+    text-align: center;
+    font-weight: bold;
+}
+/* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */
