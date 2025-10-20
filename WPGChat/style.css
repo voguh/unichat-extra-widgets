@@ -47,7 +47,7 @@ html, body {
 }
 
 /* <================================================[ SHARED STYLE ]================================================> */
-#main-container > .message-item {
+#main-container > div {
     position: relative;
     animation: var(--message-animation);
 }
