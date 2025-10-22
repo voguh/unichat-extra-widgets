@@ -1,32 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-    --badge-size: 18px;
-    --emote-size: 28px;
+    --badge-size: {{badgeSize}}px;
+    --emote-size: {{emoteSize}}px;
 
-    --message-animation: fadeIn 250ms ease-in;
+    --accent-color: {{accentColor}};
 
-    --accent-color: #fcc419;
+    --author-pill-bg: {{pillBackgroundColor}};
+    --author-pill-color: {{pillTextColor}};
+    --author-pill-sponsor-bg: {{sponsorPillBackgroundColor}};
+    --author-pill-sponsor-color: {{sponsorPillTextColor}};
+    --author-pill-moderator-bg: {{moderatorPillBackgroundColor}};
+    --author-pill-moderator-color: {{moderatorPillTextColor}};
+    --author-pill-broadcaster-bg: {{broadcasterPillBackgroundColor}};
+    --author-pill-broadcaster-color: {{broadcasterPillTextColor}};
 
-    --author-pill-bg: #f8f9fa;
-    --author-pill-color: #212529;
-    --author-pill-sponsor-bg: #5f3dc4;
-    --author-pill-sponsor-color: #f8f9fa;
-    --author-pill-moderator-bg: #364fc7;
-    --author-pill-moderator-color: #f8f9fa;
-    --author-pill-broadcaster-bg: #12b886;
-    --author-pill-broadcaster-color: #f8f9fa;
-
-    --message-content-bg: #212529;
-    --message-content-color: #f8f9fa;
-    --donate-content-bg: #1971c2;
-    --donate-content-color: #f8f9fa;
-    --sponsor-content-bg: #5f3dc4;
-    --sponsor-content-color: #f8f9fa;
-    --spogift-content-bg: #f08c00;
-    --spogift-content-color: #212529;
-    --raid-content-bg: #66a80f;
-    --raid-content-color: #212529;
+    --message-content-bg: {{defaultBackgroundColor}};
+    --message-content-color: {{defaultTextColor}};
+    --donate-content-bg: {{donateBackgroundColor}};
+    --donate-content-color: {{donateTextColor}};
+    --sponsor-content-bg: {{sponsorBackgroundColor}};
+    --sponsor-content-color: {{sponsorTextColor}};
+    --spogift-content-bg: {{sponsorGiftBackgroundColor}};
+    --spogift-content-color: {{sponsorGiftTextColor}};
+    --raid-content-bg: {{raidBackgroundColor}};
+    --raid-content-color: {{raidTextColor}};
 }
 
 html, body {
@@ -49,7 +47,7 @@ html, body {
 /* <================================================[ SHARED STYLE ]================================================> */
 #main-container > div {
     position: relative;
-    animation: var(--message-animation);
+    animation: {{messageAnimation}};
 }
 
 #main-container > div:not(:first-child) {

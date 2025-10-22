@@ -1,11 +1,12 @@
-const DONATE_TEMPLATE_MESSAGE = `Mandou {currency}{value}!`;
-const SPONSOR_TEMPLATE_MESSAGE = `Se tornou membro por {months} meses!`;
-const SPONSOR_GIFT_TEMPLATE_MESSAGE = `Mandou {count} membros de presente!`;
-const RAID_TEMPLATE_MESSAGE = `Chegou com {viewer_count} espectadores!`;
-const RAID_VIEWER_COUNT_DEFAULT = "seus";
+const DONATE_TEMPLATE_MESSAGE = `{{donateMessageText}}`;
+const SPONSOR_TEMPLATE_MESSAGE = `{{sponsorMessageText}}`;
+const SPONSOR_GIFT_TEMPLATE_MESSAGE = `{{sponsorGiftMessageText}}`;
+const RAID_TEMPLATE_MESSAGE = `{{raidMessageText}}`;
+const RAID_VIEWER_COUNT_DEFAULT = "{{raidViewerCountDefault}}";
 
 /* ================================================================================================================== */
 
+const DISPLAY_MODE = "{{displayMode}}";
 const MAIN_CONTAINER = document.querySelector("#main-container");
 const MESSAGE_TEMPLATE = document.querySelector("#chatlist_item").innerHTML;
 const DONATE_TEMPLATE = document.querySelector("#donate_item").innerHTML;
@@ -128,7 +129,8 @@ window.addEventListener("unichat:event", function ({ detail: event }) {
             const data = event.data;
 
             htmlTemplate = enrichMessage(MESSAGE_TEMPLATE, data);
-            htmlTemplate = htmlTemplate.replace("{side}", MAIN_CONTAINER.children.length % 2 ? "left" : "right");
+            const side = DISPLAY_MODE === "mixed" ? (MAIN_CONTAINER.children.length % 2 ? "left" : "right") : DISPLAY_MODE;
+            htmlTemplate = htmlTemplate.replace("{side}", side);
         } else if (event.type === "unichat:donate") {
             /** @type {import("../unichat").UniChatEventDonate['data']} */
             const data = event.data;

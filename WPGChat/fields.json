@@ -1,0 +1,200 @@
+{
+    "$schema": "https://raw.githubusercontent.com/voguh/unichat/refs/heads/feature/widget-editor/widgets/fields-schema.json",
+    "displayMode": {
+        "type": "dropdown",
+        "label": "Modo de exibição",
+        "value": "mixed",
+        "options": {
+            "left": "Esquerda",
+            "mixed": "Alternado",
+            "right": "Direita"
+        }
+    },
+    "messageAnimation": {
+        "type": "dropdown",
+        "label": "Animação de entrada",
+        "value": "fadeIn 250ms ease-in",
+        "options": {
+            "none": "None",
+            "fadeIn 250ms ease-in": "Fade In",
+            "slideInLeft 250ms ease-in": "Slide In Left",
+            "slideInRight 250ms ease-in": "Slide In Right",
+            "bounceIn 250ms ease-in": "Bounce In",
+            "zoomIn 250ms ease-in": "Zoom In"
+        }
+    },
+    "accentColor": {
+        "type": "colorpicker",
+        "label": "Cor de destaque",
+        "value": "#fcc419"
+    },
+
+
+
+    "emoteSize": {
+        "type": "number",
+        "group": "Mensagem",
+        "label": "Tamanho do Emote",
+        "value": 28
+    },
+    "defaultBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Mensagem",
+        "label": "Cor de fundo padrão",
+        "value": "#212529"
+    },
+    "defaultTextColor": {
+        "type": "colorpicker",
+        "group": "Mensagem",
+        "label": "Cor do texto padrão",
+        "value": "#f8f9fa"
+    },
+
+
+
+    "badgeSize": {
+        "type": "number",
+        "group": "Etiqueta do usuário",
+        "label": "Tamanho da Badge",
+        "value": 18
+    },
+    "pillBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Etiqueta do usuário",
+        "label": "Cor de fundo",
+        "value": "#f8f9fa"
+    },
+    "pillTextColor": {
+        "type": "colorpicker",
+        "group": "Etiqueta do usuário",
+        "label": "Cor do texto",
+        "value": "#212529"
+    },
+    "sponsorPillBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Etiqueta do usuário",
+        "label": "Cor de fundo (Sponsor)",
+        "value": "#5f3dc4"
+    },
+    "sponsorPillTextColor": {
+        "type": "colorpicker",
+        "group": "Etiqueta do usuário",
+        "label": "Cor do texto (Sponsor)",
+        "value": "#f8f9fa"
+    },
+    "moderatorPillBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Etiqueta do usuário",
+        "label": "Cor de fundo (Moderator)",
+        "value": "#364fc7"
+    },
+    "moderatorPillTextColor": {
+        "type": "colorpicker",
+        "group": "Etiqueta do usuário",
+        "label": "Cor do texto (Moderator)",
+        "value": "#f8f9fa"
+    },
+    "broadcasterPillBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Etiqueta do usuário",
+        "label": "Cor de fundo (Broadcaster)",
+        "value": "#12b886"
+    },
+    "broadcasterPillTextColor": {
+        "type": "colorpicker",
+        "group": "Etiqueta do usuário",
+        "label": "Cor do texto (Broadcaster)",
+        "value": "#f8f9fa"
+    },
+
+
+
+    "donateMessageText": {
+        "type": "textarea",
+        "group": "Evento de Donate",
+        "label": "Message template",
+        "value": "Mandou {currency}{value}!"
+    },
+    "donateBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Evento de Donate",
+        "label": "Cor de fundo",
+        "value": "#1971c2"
+    },
+    "donateTextColor": {
+        "type": "colorpicker",
+        "group": "Evento de Donate",
+        "label": "Cor do texto",
+        "value": "#f8f9fa"
+    },
+
+
+
+    "sponsorMessageText": {
+        "type": "textarea",
+        "group": "Evento de Sponsor",
+        "label": "Message template",
+        "value": "Se tornou membro por {months} meses!"
+    },
+    "sponsorBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Evento de Sponsor",
+        "label": "Cor de fundo",
+        "value": "#5f3dc4"
+    },
+    "sponsorTextColor": {
+        "type": "colorpicker",
+        "group": "Evento de Sponsor",
+        "label": "Cor do texto",
+        "value": "#f8f9fa"
+    },
+
+
+
+    "sponsorGiftMessageText": {
+        "type": "textarea",
+        "group": "Evento de Sponsor Gift",
+        "label": "Message template",
+        "value": "Mandou {count} membros de presente!"
+    },
+    "sponsorGiftBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Evento de Sponsor Gift",
+        "label": "Cor de fundo",
+        "value": "#f08c00"
+    },
+    "sponsorGiftTextColor": {
+        "type": "colorpicker",
+        "group": "Evento de Sponsor Gift",
+        "label": "Cor do texto",
+        "value": "#212529"
+    },
+
+
+
+    "raidMessageText": {
+        "type": "textarea",
+        "group": "Evento de Raid",
+        "label": "Message template",
+        "value": "Chegou com {viewer_count} espectadores!"
+    },
+    "raidViewerCountDefault": {
+        "type": "text",
+        "group": "Evento de Raid",
+        "label": "Viewer count placeholder",
+        "description": "Valor usado quando o contador de espectadores não está disponível.",
+        "value": "seus"
+    },
+    "raidBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Evento de Raid",
+        "label": "Cor de fundo",
+        "value": "#66a80f"
+    },
+    "raidTextColor": {
+        "type": "colorpicker",
+        "group": "Evento de Raid",
+        "label": "Cor do texto",
+        "value": "#212529"
+    }
+}
