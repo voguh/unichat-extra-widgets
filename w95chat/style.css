@@ -1,8 +1,6 @@
 :root {
-    --badge-size: 18px;
-    --emote-size: 28px;
-
-    --event-item-in-animation: fadeIn 500ms linear;
+    --badge-size: {{badgeSize}}px;
+    --emote-size: {{emoteSize}}px;
 
     --plt-black: #000000;
     --plt-maroon: #800000;
@@ -48,13 +46,13 @@ html, body {
 #main-container > div {
     flex-shrink: 0;
     position: relative;
-    border-top: 2px solid var(--plt-white);
-    border-left: 2px solid var(--plt-white);
-    border-bottom: 2px solid var(--plt-black);
-    border-right: 2px solid var(--plt-black);
+    border-top: 2px solid color-mix(in srgb, var(--plt-white) 50%, transparent);
+    border-left: 2px solid color-mix(in srgb, var(--plt-white) 50%, transparent);
+    border-bottom: 2px solid color-mix(in srgb, var(--plt-black) 50%, transparent);
+    border-right: 2px solid color-mix(in srgb, var(--plt-black) 50%, transparent);
     overflow: hidden;
-    background: var(--plt-silver);
-    animation: var(--event-item-in-animation);
+    background: {{defaultBackgroundColor}};
+    animation: {{messageAnimation}};
 }
 
 #main-container > div:not(:first-child) {
@@ -68,8 +66,8 @@ html, body {
     align-items: center;
     gap: 8px;
     padding: 4px;
-    background: var(--plt-gray);
-    color: var(--plt-white);
+    background: {{headerBackgroundColor}};
+    color: {{headerTextColor}};
 }
 
 #main-container > div > .event-item-header > .badges {
@@ -114,15 +112,15 @@ html, body {
 }
 
 #main-container > div > .event-item-header > .controls > i {
-    color: var(--plt-black);
-    background:var(--plt-silver);
+    color: color-mix(in srgb, {{defaultTextColor}} 75%, transparent);
+    background: color-mix(in srgb, {{defaultBackgroundColor}} 75%, transparent);
     padding: 4px;
     width: calc(var(--badge-size) - 12px);
     height: calc(var(--badge-size) - 12px);
-    border-top: 2px solid var(--plt-white);
-    border-left: 2px solid var(--plt-white);
-    border-bottom: 2px solid var(--plt-black);
-    border-right: 2px solid var(--plt-black);
+    border-top: 2px solid color-mix(in srgb, var(--plt-white) 50%, transparent);
+    border-left: 2px solid color-mix(in srgb, var(--plt-white) 50%, transparent);
+    border-bottom: 2px solid color-mix(in srgb, var(--plt-black) 50%, transparent);
+    border-right: 2px solid color-mix(in srgb, var(--plt-black) 50%, transparent);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,7 +136,7 @@ html, body {
 
 #main-container > div > .event-item-body {
     padding: 8px;
-    color: var(--plt-black);
+    color: {{defaultTextColor}};
     white-space: normal;
     word-break: break-word;
 }
@@ -152,7 +150,7 @@ html, body {
 #main-container > div > .event-item-body > div[class*="meta"] > span {
     font-weight: bold;
     font-size: 18px;
-    color: var(--plt-navy);
+    color: {{accentColor}};
 }
 
 #main-container > div > .event-item-body > .message {
@@ -185,8 +183,8 @@ html, body {
 
 /* <============================================[ DONATE MESSAGE STYLE ]============================================> */
 #main-container > .donate-item > .event-item-header {
-    background: var(--plt-olive);
-    color: var(--plt-white);
+    background: {{donateBackgroundColor}};
+    color: {{donateTextColor}};
 }
 /* <==========================================[ END DONATE MESSAGE STYLE ]==========================================> */
 
@@ -194,8 +192,8 @@ html, body {
 
 /* <============================================[ SPONSOR MESSAGE STYLE ]============================================> */
 #main-container > .sponsor-item > .event-item-header {
-    background: var(--plt-navy);
-    color: var(--plt-white);
+    background: {{sponsorBackgroundColor}};
+    color: {{sponsorTextColor}};
 }
 /* <==========================================[ END SPONSOR MESSAGE STYLE ]==========================================> */
 
@@ -203,8 +201,8 @@ html, body {
 
 /* <=========================================[ SPONSOR GIFT MESSAGE STYLE ]=========================================> */
 #main-container > .spogift-item > .event-item-header {
-    background: var(--plt-navy);
-    color: var(--plt-white);
+    background: {{sponsorGiftBackgroundColor}};
+    color: {{sponsorGiftTextColor}};
 }
 
 #main-container > .spogift-item > .event-item-body {

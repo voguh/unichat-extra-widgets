@@ -1,8 +1,8 @@
-const DONATE_TEMPLATE_MESSAGE = `Mandou <span class="value">{value} {currency}</span>!`;
-const SPONSOR_TEMPLATE_MESSAGE = `Se tornou {if_platform(youtube,twitch)::membro::sub} por <span>{months}</span> meses!`;
-const SPONSOR_GIFT_TEMPLATE_MESSAGE = `Mandou <span>{count} {if_platform(youtube,twitch)::membros::subs}</span> de presente!`;
-const RAID_TEMPLATE_MESSAGE = `<span>{author_display_name}</span> acabou de chegar com {viewer_count} espectadores!`;
-const RAID_VIEWER_COUNT_DEFAULT = "seus";
+const DONATE_TEMPLATE_MESSAGE = "{{donateMessageText}}";
+const SPONSOR_TEMPLATE_MESSAGE = "{{sponsorMessageText}}";
+const SPONSOR_GIFT_TEMPLATE_MESSAGE = "{{sponsorGiftMessageText}}";
+const RAID_TEMPLATE_MESSAGE = "{{raidMessageText}}";
+const RAID_VIEWER_COUNT_DEFAULT = "{{raidViewerCountDefault}}";
 
 /* ================================================================================================================== */
 
