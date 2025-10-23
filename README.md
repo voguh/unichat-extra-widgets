@@ -4,6 +4,28 @@ Este repositório tem o propósito de conter widgets gratuitos e livres para o u
 
 ---
 
+### [EditableDefault](./editableDefault)
+
+Uma versão editável do widget padrão do UniChat
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="./docs/editableDefault_preview.gif" width="414px" height="521px" />
+      </td>
+      <td>
+        <h4>Pontos chave:</h4>
+        <ul>
+          <li>Suporte ao editor de widgets;</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
 ### [W95Chat](./w95chat)
 
 Um widget de chat inspirado no estilo do Windows 95.
@@ -12,12 +34,12 @@ Um widget de chat inspirado no estilo do Windows 95.
   <tbody>
     <tr>
       <td>
-        <img src="./docs/w95chat_preview.gif" />
+        <img src="./docs/w95chat_preview.gif" width="414px" height="521px" />
       </td>
       <td>
         <h4>Pontos chave:</h4>
         <ul>
-          <li>Suporte ao widget editor</li>
+          <li>Suporte ao editor de widgets;</li>
         </ul>
       </td>
     </tr>
@@ -34,15 +56,15 @@ Este widget de chat apresenta as mensagens como se fossem conversas em um grupo 
   <tbody>
     <tr>
       <td>
-        <img src="./docs/WPGChat_preview.gif" />
+        <img src="./docs/WPGChat_preview.gif" width="414px" height="521px" />
       </td>
       <td>
         <h4>Pontos chave:</h4>
         <ul>
+          <li>Suporte ao editor de widgets;</li>
           <li>Avatar dos usuários;</li>
           <li>Altera dinamicamente o lado em que o avatar dos usuários está;</li>
           <li>Usuários comuns, sponsors e moderadores tem cores diferentes;</li>
-          <li>Suporte ao widget editor</li>
         </ul>
       </td>
     </tr>
