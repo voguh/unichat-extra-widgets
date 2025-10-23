@@ -26,6 +26,29 @@ Uma versão editável do widget padrão do UniChat
 
 ---
 
+### [EditableRaid](./editableRaid)
+
+Uma versão editável do widget padrão do UniChat
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="./docs/editableRaid_preview.gif" width="414px" height="521px" />
+      </td>
+      <td>
+        <h4>Pontos chave:</h4>
+        <ul>
+          <li>Suporte ao editor de widgets;</li>
+          <li>Utiliza o [DecAPI](https://decapi.me/) para buscar avatares da twitch;</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
 ### [W95Chat](./w95chat)
 
 Um widget de chat inspirado no estilo do Windows 95.

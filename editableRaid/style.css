@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    /* <<== FIELDS TO CSS VARIABLES ==>> */
+    --accent-color: {{accentColor}};
+    --base-color: {{textBackgroundColor}};
+    --message-color: {{textColor}};
+
+    --username-font-size: {{usernameFontSize}}px;
+    --details-font-size: {{messageFontSize}}px;
+
+    --user-avatar-size: {{avatarSize}}px;
+    --user-avatar-border-size: {{avatarBorderSize}}px;
+    --avatar-entry-animation: {{avatarEntryAnimation}};
+    --avatar-exit-animation: {{avatarExitAnimation}};
+
+    --username-entry-animation: {{usernameEntryAnimation}};
+    --username-exit-animation: {{usernameExitAnimation}};
+
+    --message-entry-animation: {{messageEntryAnimation}};
+    --message-exit-animation: {{messageExitAnimation}};
+    /* <<== END FIELDS TO CSS VARIABLES ==>> */
+}
+
+html, body {
+    font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+#main-container {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#main-container > .raider-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#main-container > .raider-info > .raider-avatar {
+    width: var(--user-avatar-size);
+    height: var(--user-avatar-size);
+    border-radius: 50%;
+    overflow: hidden;
+    border: var(--user-avatar-border-size) solid var(--accent-color);
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: var(--avatar-entry-animation) forwards;
+}
+
+#main-container > .raider-info > .raider-avatar > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#main-container > .raider-info > .raider-meta-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#main-container > .raider-info > .raider-meta-info > .raider-username {
+    font-size: var(--username-font-size);
+    font-weight: 700;
+    color: var(--accent-color);
+    background: var(--base-color);
+    padding: 0 16px;
+    text-align: center;
+    animation: var(--username-entry-animation) forwards;
+    font-weight: bolder;
+}
+
+#main-container > .raider-info > .raider-meta-info > .raider-message {
+    font-size: var(--details-font-size);
+    font-weight: 600;
+    color: var(--message-color);
+    background: var(--base-color);
+    padding: 0 16px;
+    text-align: center;
+    transform: scale(0);
+    animation: var(--message-entry-animation) 200ms forwards;
+}
+
+/* ================================================================================================================== */
+
+#main-container > .raider-info.fade-out > .raider-avatar {
+    animation: var(--avatar-exit-animation) 200ms forwards;
+}
+
+#main-container > .raider-info.fade-out > .raider-meta-info > .raider-username {
+    animation: var(--username-exit-animation) 200ms forwards;
+}
+
+#main-container > .raider-info.fade-out > .raider-meta-info > .raider-message {
+    transform: scale(1);
+    animation: var(--message-exit-animation) forwards;
+}
