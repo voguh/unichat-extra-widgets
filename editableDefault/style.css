@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --general-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
+    /* <<== FIELDS TO CSS VARIABLES ==>> */
+    --entry-animation: {{entryAnimation}};
+    --exit-delay: {{exitDelay}}ms;
+    --exit-animation: {{exitAnimation}};
+    --accent-color: {{accentColor}};
+    --general-padding: {{generalSpacing}}px;
+    --general-border-radius: {{generalBorderRadius}}px;
+
+    --author-label-background-color: {{authorLabelBackgroundColor}};
+    --author-label-text-color: {{authorLabelTextColor}};
+    --author-badge-size: {{authorBadgeSize}}px;
+
+    --emote-size: {{emoteSize}}px;
+    --message-content-background-color: {{messageContentBackgroundColor}};
+    --message-content-text-color: {{messageContentTextColor}};
+
+    --donate-background-color: {{donateBackgroundColor}};
+    --donate-text-color: {{donateTextColor}};
+
+    --sponsor-background-color: {{sponsorBackgroundColor}};
+    --sponsor-text-color: {{sponsorTextColor}};
+
+    --sponsor-gift-background-color: {{sponsorGiftBackgroundColor}};
+    --sponsor-gift-text-color: {{sponsorGiftTextColor}};
+
+    --raid-background-color: {{raidBackgroundColor}};
+    --raid-text-color: {{raidTextColor}};
+    /* <<== END FIELDS TO CSS VARIABLES ==>> */
+}
+
+html, body {
+    font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#main-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100vw - (var(--general-padding) * 2));
+    padding: var(--general-padding);
+    overflow-y: hidden;
+}
+
+/* <================================================[ SHARED STYLE ]================================================> */
+#main-container > div {
+    --margin-top: calc(((var(--author-badge-size) + var(--general-padding)) / 2) + 8px);
+
+    position: relative;
+    animation: var(--entry-animation);
+}
+
+#main-container.with-exit-animation > div {
+    animation: var(--entry-animation), var(--exit-animation) var(--exit-delay) forwards;
+}
+
+#main-container > div > .author-meta {
+    width: fit-content;
+    max-width: calc(100vw - (var(--general-padding) * 6));
+    position: absolute;
+    top: 0;
+    left: var(--general-padding);
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--general-padding);
+    padding: calc(var(--general-padding) / 2) var(--general-padding);
+    border-radius: var(--general-border-radius);
+    background: var(--author-label-background-color);
+    overflow: hidden;
+}
+
+#main-container > div > .author-meta > .badges {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--general-padding) / 2);
+}
+
+#main-container > div > .author-meta > .badges:empty {
+    display: none;
+}
+
+#main-container > div > .author-meta > .badges > img {
+    width: var(--author-badge-size);
+    height: var(--author-badge-size);
+    border-radius: calc(var(--general-border-radius) / 2);
+}
+
+#main-container > div > .author-meta > .name {
+    flex: 1 1 auto;
+    color: var(--author-label-text-color);
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 1;
+    white-space: nowrap;
+
+}
+/* <==============================================[ END SHARED STYLE ]==============================================> */
+
+/* <============================================[ SIMPLE MESSAGE STYLE ]============================================> */
+#main-container > .message-item {
+    margin-top: var(--margin-top);
+    position: relative;
+}
+
+#main-container > .message-item > .message {
+    padding: var(--margin-top) var(--general-padding) var(--general-padding) var(--general-padding);
+    border-radius: var(--general-border-radius);
+    background: var(--message-content-background-color);
+    color: var(--message-content-text-color);
+    box-shadow: var(--general-box-shadow);
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > .message-item > .message > img {
+    height: var(--emote-size);
+    vertical-align: middle;
+}
+/* <==========================================[ END SIMPLE MESSAGE STYLE ]==========================================> */
+
+/* <============================================[ DONATE MESSAGE STYLE ]============================================> */
+#main-container > .donate-item {
+    margin-top: var(--margin-top);
+    position: relative;
+}
+
+#main-container > .donate-item > .author-meta {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#main-container > .donate-item > .message-wrapper {
+    padding: var(--margin-top) var(--general-padding) var(--general-padding) var(--general-padding);
+    border-radius: var(--general-border-radius);
+    background: var(--donate-background-color);
+    color: var(--donate-text-color);
+    box-shadow: var(--general-box-shadow);
+}
+
+#main-container > .donate-item > .message-wrapper > .donate-meta {
+    font-weight: bold;
+    text-align: center;
+}
+
+#main-container > .donate-item > .message-wrapper > .donate-meta > span {
+    font-weight: bolder;
+    color: var(--accent-color);
+}
+
+#main-container > .donate-item > .message-wrapper > .message {
+    margin-top: var(--general-padding);
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: var(--general-border-radius);
+    padding: var(--general-padding);
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > .donate-item > .message-wrapper > .message:empty {
+    display: none;
+}
+
+#main-container > .donate-item > .message-wrapper > .message > img {
+    height: var(--emote-size);
+    vertical-align: middle;
+}
+/* <==========================================[ END DONATE MESSAGE STYLE ]==========================================> */
+
+/* <============================================[ SPONSOR MESSAGE STYLE ]============================================> */
+#main-container > .sponsor-item {
+    margin-top: var(--margin-top);
+    position: relative;
+}
+
+#main-container > .sponsor-item > .author-meta {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#main-container > .sponsor-item > .message-wrapper {
+    padding: var(--margin-top) var(--general-padding) var(--general-padding) var(--general-padding);
+    border-radius: var(--general-border-radius);
+    background: var(--sponsor-background-color);
+    color: var(--sponsor-text-color);
+    box-shadow: var(--general-box-shadow);
+}
+
+#main-container > .sponsor-item > .message-wrapper > .sponsor-meta {
+    font-weight: bold;
+    text-align: center;
+}
+
+#main-container > .sponsor-item > .message-wrapper > .sponsor-meta > span {
+    font-weight: bolder;
+    color: var(--accent-color);
+}
+
+#main-container > .sponsor-item > .message-wrapper > .message {
+    width: calc(100vw - (var(--general-padding) * 6));
+    margin-top: var(--general-padding);
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: var(--general-border-radius);
+    padding: var(--general-padding);
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > .sponsor-item > .message-wrapper > .message:empty {
+    display: none;
+}
+
+#main-container > .sponsor-item > .message-wrapper > .message > img {
+    height: var(--emote-size);
+    vertical-align: middle;
+}
+/* <==========================================[ END SPONSOR MESSAGE STYLE ]==========================================> */
+
+/* <=========================================[ SPONSOR GIFT MESSAGE STYLE ]=========================================> */
+#main-container > .spogift-item {
+    margin-top: var(--general-padding);
+    position: relative;
+}
+
+#main-container > .spogift-item > .message {
+    position: relative;
+    padding: var(--general-padding);
+    text-align: center;
+    border-radius: var(--general-border-radius);
+    background: var(--sponsor-gift-background-color);
+    color: var(--sponsor-gift-text-color);
+    font-weight: bold;
+    box-shadow: var(--general-box-shadow);
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#main-container > .spogift-item > .message:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06b";
+    font-size: calc(64px + (var(--general-padding) * 2));
+    position: absolute;
+    bottom: calc((var(--general-padding) * 2) * -1);
+    right: calc((var(--general-padding) * 2) * -1);
+    transform: rotate(-45deg);
+    color: rgba(255, 255, 255, 0.25);
+    z-index: 0;
+}
+
+#main-container > .spogift-item > .message > span {
+    z-index: 1;
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > .spogift-item > .message > span > span {
+    font-weight: bolder;
+}
+/* <=======================================[ END SPONSOR GIFT MESSAGE STYLE ]=======================================> */
+
+/* <=============================================[ RAID MESSAGE STYLE ]=============================================> */
+#main-container > .raid-item {
+    margin-top: var(--general-padding);
+    position: relative;
+}
+
+#main-container > .raid-item > .message-wrapper {
+    padding: var(--general-padding);
+    border-radius: var(--general-border-radius);
+    background: var(--raid-background-color);
+    color: var(--raid-text-color);
+    font-weight: bold;
+    box-shadow: var(--general-box-shadow);
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > .raid-item > .message-wrapper > span {
+    font-weight: bolder;
+}
+/* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */

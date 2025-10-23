@@ -1,0 +1,214 @@
+{
+    "$schema": "https://raw.githubusercontent.com/voguh/unichat/refs/tags/1.3.0/widgets/fields-schema.json",
+
+    "platformBadge": {
+        "type": "checkbox",
+        "label": "Show platform badge",
+        "value": true
+    },
+    "entryAnimation": {
+        "type": "dropdown",
+        "label": "Entry animation",
+        "value": "bounceIn 250ms ease-in",
+        "options": {
+            "backInDown 250ms ease-in": "Back In Down",
+            "backInLeft 250ms ease-in": "Back In Left",
+            "backInRight 250ms ease-in": "Back In Right",
+            "backInUp 250ms ease-in": "Back In Up",
+            "bounceIn 250ms ease-in": "Bounce In",
+            "bounceInDown 250ms ease-in": "Bounce In Down",
+            "bounceInLeft 250ms ease-in": "Bounce In Left",
+            "bounceInRight 250ms ease-in": "Bounce In Right",
+            "bounceInUp 250ms ease-in": "Bounce In Up",
+            "fadeIn 250ms ease-in": "Fade In",
+            "fadeInDown 250ms ease-in": "Fade In Down",
+            "fadeInLeft 250ms ease-in": "Fade In Left",
+            "fadeInRight 250ms ease-in": "Fade In Right",
+            "fadeInUp 250ms ease-in": "Fade In Up"
+        }
+    },
+    "exitDelay": {
+        "type": "number",
+        "label": "Exit delay (milliseconds)",
+        "description": "0 means no exit animation.",
+        "value": 0,
+        "min": 0,
+        "max": 10000,
+        "step": 100
+    },
+    "exitAnimation": {
+        "type": "dropdown",
+        "label": "Exit animation",
+        "description": "Only used if exit delay is greater than 0.",
+        "value": "none",
+        "options": {
+            "none": "None",
+            "backOutDown 250ms ease-out": "Back Out Down",
+            "backOutLeft 250ms ease-out": "Back Out Left",
+            "backOutRight 250ms ease-out": "Back Out Right",
+            "backOutUp 250ms ease-out": "Back Out Up",
+            "bounceOut 250ms ease-out": "Bounce Out",
+            "bounceOutDown 250ms ease-out": "Bounce Out Down",
+            "bounceOutLeft 250ms ease-out": "Bounce Out Left",
+            "bounceOutRight 250ms ease-out": "Bounce Out Right",
+            "bounceOutUp 250ms ease-out": "Bounce Out Up",
+            "fadeOut 250ms ease-out": "Fade Out",
+            "fadeOutDown 250ms ease-out": "Fade Out Down",
+            "fadeOutLeft 250ms ease-out": "Fade Out Left",
+            "fadeOutRight 250ms ease-out": "Fade Out Right",
+            "fadeOutUp 250ms ease-out": "Fade Out Up"
+        }
+    },
+    "divider0": { "type": "divider" },
+    "accentColor": {
+        "type": "colorpicker",
+        "label": "Accent color",
+        "value": "#fcc419"
+    },
+    "generalSpacing": {
+        "type": "number",
+        "label": "General spacing (pixels)",
+        "value": 8,
+        "min": 8,
+        "max": 50
+    },
+    "generalBorderRadius": {
+        "type": "number",
+        "label": "General border radius (pixels)",
+        "value": 4,
+        "min": 4,
+        "max": 50
+    },
+
+
+
+    "authorLabelBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Author Label",
+        "label": "Author label background color",
+        "value": "#343a40"
+    },
+    "authorLabelTextColor": {
+        "type": "colorpicker",
+        "group": "Author Label",
+        "label": "Author label text color",
+        "value": "#f8f9fa"
+    },
+    "authorBadgeSize": {
+        "type": "number",
+        "group": "Author Label",
+        "label": "Author badge size (pixels)",
+        "value": 18
+    },
+
+
+    
+    "emoteSize": {
+        "type": "number",
+        "group": "Message Content",
+        "label": "Author badge size (pixels)",
+        "value": 28
+    },
+    "messageContentBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Message Content",
+        "label": "Background color",
+        "value": "#212529"
+    },
+    "messageContentTextColor": {
+        "type": "colorpicker",
+        "group": "Message Content",
+        "label": "Text color",
+        "value": "#f8f9fa"
+    },
+
+
+    "donateTemplateMessage": {
+        "type": "textarea",
+        "group": "Donate Event",
+        "label": "Template message",
+        "value": "Just donated <span>{value} {currency}</span>!"
+    },
+    "donateBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Donate Event",
+        "label": "Background color",
+        "value": "#1971c2"
+    },
+    "donateTextColor": {
+        "type": "colorpicker",
+        "group": "Donate Event",
+        "label": "Text color",
+        "value": "#f8f9fa"
+    },
+
+
+    
+    "sponsorTemplateMessage": {
+        "type": "textarea",
+        "group": "Sponsor Event",
+        "label": "Template message",
+        "value": "Become a sponsor for <span>{months}</span> months with tier <span>{tier}</span>!"
+    },
+    "sponsorBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Sponsor Event",
+        "label": "Background color",
+        "value": "#495057"
+    },
+    "sponsorTextColor": {
+        "type": "colorpicker",
+        "group": "Sponsor Event",
+        "label": "Text color",
+        "value": "#f8f9fa"
+    },
+
+
+    
+    "sponsorGiftTemplateMessage": {
+        "type": "textarea",
+        "group": "Sponsor Gift Event",
+        "label": "Template message",
+        "value": "<span>{author_display_name}</span>, just gifted <span>{count} subscriptions</span>!"
+    },
+    "sponsorGiftBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Sponsor Gift Event",
+        "label": "Background color",
+        "value": "#f08c00"
+    },
+    "sponsorGiftTextColor": {
+        "type": "colorpicker",
+        "group": "Sponsor Gift Event",
+        "label": "Text color",
+        "value": "#212529"
+    },
+
+
+    
+    "raidTemplateMessage": {
+        "type": "textarea",
+        "group": "Raid Event",
+        "label": "Template message",
+        "value": "<span>{author_display_name}</span>&nbsp;is raiding with {viewer_count} viewers!"
+    },
+    "raidViewersDefaultText": {
+        "type": "text",
+        "group": "Raid Event",
+        "label": "No viewers default text",
+        "description": "Only used when the viewer count is 1 or less.",
+        "value": "their"
+    },
+    "raidBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Raid Event",
+        "label": "Background color",
+        "value": "#66a80f"
+    },
+    "raidTextColor": {
+        "type": "colorpicker",
+        "group": "Raid Event",
+        "label": "Text color",
+        "value": "#f8f9fa"
+    }
+}
