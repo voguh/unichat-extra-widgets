@@ -40,7 +40,7 @@ Uma versão editável do widget padrão do UniChat
         <h4>Pontos chave:</h4>
         <ul>
           <li>Suporte ao editor de widgets;</li>
-          <li>Utiliza o [DecAPI](https://decapi.me/) para buscar avatares da twitch;</li>
+          <li>Utiliza o <a href="https://decapi.me/" target="_blank" rel="noopener noreferrer">DecAPI</a> para buscar avatares da twitch;</li>
         </ul>
       </td>
     </tr>
