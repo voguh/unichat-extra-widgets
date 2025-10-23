@@ -12,7 +12,7 @@ Uma versão editável do widget padrão do UniChat
   <tbody>
     <tr>
       <td>
-        <img src="./docs/editableDefault_preview.gif" width="414px" height="521px" />
+        <img src="https://cdn.statically.io/gh/voguh/unichat-extra-widgets/main/docs/editableDefault_preview.gif" width="414px" height="521px" />
       </td>
       <td>
         <h4>Pontos chave:</h4>
@@ -34,7 +34,7 @@ Uma versão editável do widget padrão do UniChat
   <tbody>
     <tr>
       <td>
-        <img src="./docs/editableRaid_preview.gif" width="414px" height="521px" />
+        <img src="https://cdn.statically.io/gh/voguh/unichat-extra-widgets/main/docs/editableRaid_preview.gif" width="414px" height="521px" />
       </td>
       <td>
         <h4>Pontos chave:</h4>
@@ -57,7 +57,7 @@ Um widget de chat inspirado no estilo do Windows 95.
   <tbody>
     <tr>
       <td>
-        <img src="./docs/w95chat_preview.gif" width="414px" height="521px" />
+        <img src="https://cdn.statically.io/gh/voguh/unichat-extra-widgets/main/docs/w95chat_preview.gif" width="414px" height="521px" />
       </td>
       <td>
         <h4>Pontos chave:</h4>
@@ -79,7 +79,7 @@ Este widget de chat apresenta as mensagens como se fossem conversas em um grupo 
   <tbody>
     <tr>
       <td>
-        <img src="./docs/WPGChat_preview.gif" width="414px" height="521px" />
+        <img src="https://cdn.statically.io/gh/voguh/unichat-extra-widgets/main/docs/WPGChat_preview.gif" width="414px" height="521px" />
       </td>
       <td>
         <h4>Pontos chave:</h4>
