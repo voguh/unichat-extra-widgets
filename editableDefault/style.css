@@ -46,7 +46,7 @@ html, body {
     left: 0;
     width: calc(100vw - (var(--general-padding) * 2));
     padding: var(--general-padding);
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 /* <================================================[ SHARED STYLE ]================================================> */
