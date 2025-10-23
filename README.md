@@ -29,7 +29,6 @@ Um widget de chat inspirado no estilo do Windows 95.
 
 ### [WPGChat](./WPGChat)
 
-Um widget que funciona apenas no YouTube devido à utilização do `authorProfilePictureUrl`.
 Este widget de chat apresenta as mensagens como se fossem conversas em um grupo de whatsapp.
 
 <table>

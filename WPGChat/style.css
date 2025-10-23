@@ -80,6 +80,10 @@ html, body {
     object-fit: cover;
 }
 
+#main-container > .message-item:not(.show-avatar) > .author-avatar {
+    display: none;
+}
+
 #main-container > .message-item.left > .author-meta {
     left: calc(8px + (var(--badge-size) + 16px) + 16px);
 }
@@ -144,12 +148,20 @@ html, body {
     word-break: break-word;
 }
 
-#main-container > .message-item.left > .message {
+#main-container > .message-item.left.show-avatar > .message {
     margin-left: calc((var(--badge-size) + 16px) + 16px);
 }
 
-#main-container > .message-item.right > .message {
+#main-container > .message-item.left:not(.show-avatar) > .message {
+    margin-left: 16px;
+}
+
+#main-container > .message-item.right.show-avatar > .message {
     margin-right: calc((var(--badge-size) + 16px) + 16px);
+}
+
+#main-container > .message-item.right:not(.show-avatar) > .message {
+    margin-right: 16px;
 }
 
 #main-container > .message-item > .message::before {
@@ -163,13 +175,23 @@ html, body {
     border-bottom: 8px solid {{defaultBackgroundColor}};
 }
 
-#main-container > .message-item.left > .message::before {
+#main-container > .message-item.left.show-avatar > .message::before {
     left: calc((var(--badge-size) + 16px) + 4px);
     transform: rotate(-90deg);
 }
 
-#main-container > .message-item.right> .message::before {
+#main-container > .message-item.left:not(.show-avatar) > .message::before {
+    left: 4px;
+    transform: rotate(-90deg);
+}
+
+#main-container > .message-item.right.show-avatar > .message::before {
     right: calc((var(--badge-size) + 16px) + 4px);
+    transform: rotate(90deg);
+}
+
+#main-container > .message-item.right:not(.show-avatar) > .message::before {
+    right: 4px;
     transform: rotate(90deg);
 }
 

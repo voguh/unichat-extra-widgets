@@ -2,7 +2,7 @@
 <div id="main-container"></div>
 
 <script type="text/template" id="chatlist_item">
-    <div class="message-item message-item--{author_type} {side}" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
+    <div class="message-item message-item--{author_type} {side} {{messageAvatar}}" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
         <div class="author-avatar">
             <img src="{author_profile_picture_url}" style="background:{author_display_color};" onerror="this.onerror=null; this.src=`${window.location.pathname}/assets/dummy-avatar.png`;" alt="{author_display_name}"/>
         </div>

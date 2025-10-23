@@ -23,6 +23,15 @@
             "zoomIn 250ms ease-in": "Zoom In"
         }
     },
+    "messageAvatar": {
+        "type": "dropdown",
+        "label": "Animação de entrada",
+        "value": "show-avatar",
+        "options": {
+            "show-avatar": "Mostrar avatar",
+            "hide-avatar": "Esconder avatar"
+        }
+    },
     "accentColor": {
         "type": "colorpicker",
         "label": "Cor de destaque",
