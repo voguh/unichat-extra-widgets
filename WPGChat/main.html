@@ -4,7 +4,7 @@
 <script type="text/template" id="chatlist_item">
     <div class="message-item message-item--{author_type} {side}" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
         <div class="author-avatar">
-            <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+            <img src="{author_profile_picture_url}" style="background:{author_display_color};" onerror="this.onerror=null; this.src=`${window.location.pathname}/assets/dummy-avatar.png`;" alt="{author_display_name}"/>
         </div>
         <div class="author-meta">
             <span class="badges">{author_badges}</span>
@@ -19,7 +19,7 @@
     <div class="donate-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
         <div class="element-item-header">
             <div class="author-photo">
-                <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+                <img src="{author_profile_picture_url}" style="background:{author_display_color};" onerror="this.onerror=null; this.src=`${window.location.pathname}/assets/dummy-avatar.png`;" alt="{author_display_name}"/>
             </div>
             <div class="author-meta">
                 <div class="title">{author_display_name}</div>
@@ -34,7 +34,7 @@
     <div class="sponsor-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
         <div class="element-item-header">
             <div class="author-photo">
-                <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+                <img src="{author_profile_picture_url}" style="background:{author_display_color};" onerror="this.onerror=null; this.src=`${window.location.pathname}/assets/dummy-avatar.png`;" alt="{author_display_name}"/>
             </div>
             <div class="author-meta">
                 <div class="title">{author_display_name}</div>
@@ -49,7 +49,7 @@
     <div class="spogift-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
         <div class="element-item-header">
             <div class="author-photo">
-                <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+                <img src="{author_profile_picture_url}" style="background:{author_display_color};" onerror="this.onerror=null; this.src=`${window.location.pathname}/assets/dummy-avatar.png`;" alt="{author_display_name}"/>
             </div>
             <div class="author-meta">
                 <div class="title">{author_display_name}</div>
@@ -63,7 +63,7 @@
     <div class="raid-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
         <div class="element-item-header">
             <div class="author-photo">
-                <img src="{author_profile_picture_url}" alt="{author_display_name}"/>
+                <img src="{author_profile_picture_url}" style="background:{author_display_color};" onerror="this.onerror=null; this.src=`${window.location.pathname}/assets/dummy-avatar.png`;" alt="{author_display_name}"/>
             </div>
             <div class="author-meta">
                 <div class="title">{author_display_name}</div>
