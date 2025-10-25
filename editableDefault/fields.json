@@ -1,31 +1,46 @@
 {
-    "$schema": "https://raw.githubusercontent.com/voguh/unichat/refs/tags/1.3.0/widgets/fields-schema.json",
-
+    "$schema": "https://cdn.statically.io/gh/voguh/unichat/1.3.0/widgets/fields-schema.json",
     "platformBadge": {
         "type": "checkbox",
         "label": "Show platform badge",
         "value": true
     },
+    "topFadeEffectSize": {
+        "type": "number",
+        "label": "Top fade effect size (pixels)",
+        "description": "0 means no fade effect.",
+        "value": 40,
+        "min": 0,
+        "max": 100
+    },
     "entryAnimation": {
         "type": "dropdown",
         "label": "Entry animation",
-        "value": "bounceIn 250ms ease-in",
+        "value": "bounceIn",
         "options": {
-            "backInDown 250ms ease-in": "Back In Down",
-            "backInLeft 250ms ease-in": "Back In Left",
-            "backInRight 250ms ease-in": "Back In Right",
-            "backInUp 250ms ease-in": "Back In Up",
-            "bounceIn 250ms ease-in": "Bounce In",
-            "bounceInDown 250ms ease-in": "Bounce In Down",
-            "bounceInLeft 250ms ease-in": "Bounce In Left",
-            "bounceInRight 250ms ease-in": "Bounce In Right",
-            "bounceInUp 250ms ease-in": "Bounce In Up",
-            "fadeIn 250ms ease-in": "Fade In",
-            "fadeInDown 250ms ease-in": "Fade In Down",
-            "fadeInLeft 250ms ease-in": "Fade In Left",
-            "fadeInRight 250ms ease-in": "Fade In Right",
-            "fadeInUp 250ms ease-in": "Fade In Up"
+            "backInDown": "Back In Down",
+            "backInLeft": "Back In Left",
+            "backInRight": "Back In Right",
+            "backInUp": "Back In Up",
+            "bounceIn": "Bounce In",
+            "bounceInDown": "Bounce In Down",
+            "bounceInLeft": "Bounce In Left",
+            "bounceInRight": "Bounce In Right",
+            "bounceInUp": "Bounce In Up",
+            "fadeIn": "Fade In",
+            "fadeInDown": "Fade In Down",
+            "fadeInLeft": "Fade In Left",
+            "fadeInRight": "Fade In Right",
+            "fadeInUp": "Fade In Up"
         }
+    },
+    "entryAnimationDuration": {
+        "type": "number",
+        "label": "Entry animation duration (milliseconds)",
+        "value": 250,
+        "min": 100,
+        "max": 5000,
+        "step": 50
     },
     "exitDelay": {
         "type": "number",
@@ -43,21 +58,30 @@
         "value": "none",
         "options": {
             "none": "None",
-            "backOutDown 250ms ease-out": "Back Out Down",
-            "backOutLeft 250ms ease-out": "Back Out Left",
-            "backOutRight 250ms ease-out": "Back Out Right",
-            "backOutUp 250ms ease-out": "Back Out Up",
-            "bounceOut 250ms ease-out": "Bounce Out",
-            "bounceOutDown 250ms ease-out": "Bounce Out Down",
-            "bounceOutLeft 250ms ease-out": "Bounce Out Left",
-            "bounceOutRight 250ms ease-out": "Bounce Out Right",
-            "bounceOutUp 250ms ease-out": "Bounce Out Up",
-            "fadeOut 250ms ease-out": "Fade Out",
-            "fadeOutDown 250ms ease-out": "Fade Out Down",
-            "fadeOutLeft 250ms ease-out": "Fade Out Left",
-            "fadeOutRight 250ms ease-out": "Fade Out Right",
-            "fadeOutUp 250ms ease-out": "Fade Out Up"
+            "backOutDown": "Back Out Down",
+            "backOutLeft": "Back Out Left",
+            "backOutRight": "Back Out Right",
+            "backOutUp": "Back Out Up",
+            "bounceOut": "Bounce Out",
+            "bounceOutDown": "Bounce Out Down",
+            "bounceOutLeft": "Bounce Out Left",
+            "bounceOutRight": "Bounce Out Right",
+            "bounceOutUp": "Bounce Out Up",
+            "fadeOut": "Fade Out",
+            "fadeOutDown": "Fade Out Down",
+            "fadeOutLeft": "Fade Out Left",
+            "fadeOutRight": "Fade Out Right",
+            "fadeOutUp": "Fade Out Up"
         }
+    },
+    "exitAnimationDuration": {
+        "type": "number",
+        "label": "Exit animation duration (milliseconds)",
+        "description": "Only used if exit delay is greater than 0.",
+        "value": 250,
+        "min": 100,
+        "max": 5000,
+        "step": 50
     },
     "divider0": { "type": "divider" },
     "accentColor": {

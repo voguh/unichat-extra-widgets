@@ -4,9 +4,10 @@
     --general-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
 
     /* <<== FIELDS TO CSS VARIABLES ==>> */
-    --entry-animation: {{entryAnimation}};
+    --top-fade-effect-size: {{topFadeEffectSize}}px;
+    --entry-animation: {{entryAnimation}} {{entryAnimationDuration}}ms ease-in;
     --exit-delay: {{exitDelay}}ms;
-    --exit-animation: {{exitAnimation}};
+    --exit-animation: {{exitAnimation}} {{exitAnimationDuration}}ms ease-out;
     --accent-color: {{accentColor}};
     --general-padding: {{generalSpacing}}px;
     --general-border-radius: {{generalBorderRadius}}px;
@@ -40,16 +41,19 @@ html, body {
     margin: 0;
 }
 
+/* <================================================[ SHARED STYLE ]================================================> */
 #main-container {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: calc(100vw - (var(--general-padding) * 2));
+    inset: 0;
     padding: var(--general-padding);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    mask-image: linear-gradient(to bottom, transparent, black var(--top-fade-effect-size));
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black var(--top-fade-effect-size));
 }
 
-/* <================================================[ SHARED STYLE ]================================================> */
 #main-container > div {
     --margin-top: calc(((var(--author-badge-size) + var(--general-padding)) / 2) + 8px);
 

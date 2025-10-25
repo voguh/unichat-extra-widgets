@@ -1,3 +1,13 @@
+/* <<==== FIELDS TO JS VARIABLES ====>> */
+const SHOW_PLATFORM_BADGE = "{{platformBadge}}" === "true";
+const EXIT_DELAY = parseInt("{{exitDelay}}", 10);
+const DONATE_TEMPLATE_MESSAGE = "{{donateTemplateMessage}}";
+const SPONSOR_TEMPLATE_MESSAGE = "{{sponsorTemplateMessage}}";
+const SPONSOR_GIFT_TEMPLATE_MESSAGE = "{{sponsorGiftTemplateMessage}}";
+const RAID_TEMPLATE_MESSAGE = "{{raidTemplateMessage}}";
+const RAID_VIEWERS_DEFAULT_TEXT = "{{raidViewersDefaultText}}";
+/* <<== END FIELDS TO JS VARIABLES ==>> */
+
 const MAIN_CONTAINER = document.querySelector("#main-container");
 const MESSAGE_TEMPLATE = document.querySelector("#chatlist_item").innerHTML;
 const DONATE_TEMPLATE = document.querySelector("#donate_item").innerHTML;
@@ -42,7 +52,6 @@ function parseTierName(platform, tier) {
     return tier;
 }
 
-const platformConditionalRegExp = /\{if_platform\(([^)]+)\)::([^:}]*)::([^:{}]*)\}/g;
 function enrichMessage(text, data) {
     let enrichedText = text;
 
@@ -57,8 +66,8 @@ function enrichMessage(text, data) {
             enrichedText = enrichedText.replaceAll(key, value);
             enrichedText = enrichedText.replaceAll(snakeKey, value);
         } else if (rawKey === "viewerCount") {
-            enrichedText = enrichedText.replaceAll(key, value > 1 ? value : "{{raidViewersDefaultText}}");
-            enrichedText = enrichedText.replaceAll(snakeKey, value > 1 ? value : "{{raidViewersDefaultText}}");
+            enrichedText = enrichedText.replaceAll(key, value > 1 ? value : RAID_VIEWERS_DEFAULT_TEXT);
+            enrichedText = enrichedText.replaceAll(snakeKey, value > 1 ? value : RAID_VIEWERS_DEFAULT_TEXT);
         } else if (rawKey === "messageText") {
             enrichedText = enrichedText.replaceAll(key, buildMessage(value, data.emotes));
             enrichedText = enrichedText.replaceAll(snakeKey, buildMessage(value, data.emotes));
@@ -86,16 +95,13 @@ window.addEventListener("unichat:connected", function () {
     // This listener doesn't receive any data, actually it just notifies
     // that connection is established or re-established.
 
-    const exitDelay = parseInt("{{exitDelay}}", 10);
-    if (exitDelay > 0 && !MAIN_CONTAINER.classList.contains("with-exit-animation")) {
+    if (EXIT_DELAY > 0 && !MAIN_CONTAINER.classList.contains("with-exit-animation")) {
         MAIN_CONTAINER.classList.add("with-exit-animation");
     }
 });
 
 window.addEventListener("unichat:event", function ({ detail: event }) {
-    const platformBadgesEnabled = "{{platformBadge}}" === "true";
-
-    if (platformBadgesEnabled && event != null && event.data != null && Array.isArray(event.data.authorBadges)) {
+    if (SHOW_PLATFORM_BADGE && event != null && event.data != null && Array.isArray(event.data.authorBadges)) {
         let imgUrl;
         if (event.data.platform === "youtube") {
             imgUrl = `${window.location.pathname}/assets/platform_badge_youtube.png`;
@@ -134,25 +140,25 @@ window.addEventListener("unichat:event", function ({ detail: event }) {
             const data = event.data;
 
             htmlTemplate = enrichMessage(DONATE_TEMPLATE, data);
-            htmlTemplate = htmlTemplate.replace("{donate_meta}", enrichMessage("{{donateTemplateMessage}}", data));
+            htmlTemplate = htmlTemplate.replace("{donate_meta}", enrichMessage(DONATE_TEMPLATE_MESSAGE, data));
         } else if (event.type === "unichat:sponsor") {
             /** @type {import("../unichat").UniChatEventSponsor['data']} */
             const data = event.data;
 
             htmlTemplate = enrichMessage(SPONSOR_TEMPLATE, data);
-            htmlTemplate = htmlTemplate.replace("{sponsor_meta}", enrichMessage("{{sponsorTemplateMessage}}", data));
+            htmlTemplate = htmlTemplate.replace("{sponsor_meta}", enrichMessage(SPONSOR_TEMPLATE_MESSAGE, data));
         } else if (event.type === "unichat:sponsor_gift") {
             /** @type {import("../unichat").UniChatEventSponsorGift['data']} */
             const data = event.data;
 
             htmlTemplate = enrichMessage(SPONSOR_GIFT_TEMPLATE, data);
-            htmlTemplate = htmlTemplate.replace("{sponsor_gift_meta}", enrichMessage("{{sponsorGiftTemplateMessage}}", data));
+            htmlTemplate = htmlTemplate.replace("{sponsor_gift_meta}", enrichMessage(SPONSOR_GIFT_TEMPLATE_MESSAGE, data));
         } else if (event.type === "unichat:raid") {
             /** @type {import("../unichat").UniChatEventRaid['data']} */
             const data = event.data;
 
             htmlTemplate = enrichMessage(RAID_TEMPLATE, data);
-            htmlTemplate = htmlTemplate.replace("{raid_meta}", enrichMessage("{{raidTemplateMessage}}", data));
+            htmlTemplate = htmlTemplate.replace("{raid_meta}", enrichMessage(RAID_TEMPLATE_MESSAGE, data));
         }
 
         if (htmlTemplate != null && MAIN_CONTAINER.querySelector(`div[data-id="${event.data.messageId}"]`) == null) {
