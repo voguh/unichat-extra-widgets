@@ -10,22 +10,35 @@
             "right": "Direita"
         }
     },
-    "messageAnimation": {
+    "entryAnimation": {
         "type": "dropdown",
         "label": "Animação de entrada",
-        "value": "fadeIn 250ms ease-in",
+        "value": "fadeIn",
         "options": {
-            "none": "None",
-            "fadeIn 250ms ease-in": "Fade In",
-            "slideInLeft 250ms ease-in": "Slide In Left",
-            "slideInRight 250ms ease-in": "Slide In Right",
-            "bounceIn 250ms ease-in": "Bounce In",
-            "zoomIn 250ms ease-in": "Zoom In"
+            "backInDown": "Back In Down",
+            "backInLeft": "Back In Left",
+            "backInRight": "Back In Right",
+            "backInUp": "Back In Up",
+            "bounceIn": "Bounce In",
+            "bounceInDown": "Bounce In Down",
+            "bounceInLeft": "Bounce In Left",
+            "bounceInRight": "Bounce In Right",
+            "bounceInUp": "Bounce In Up",
+            "fadeIn": "Fade In",
+            "fadeInDown": "Fade In Down",
+            "fadeInLeft": "Fade In Left",
+            "fadeInRight": "Fade In Right",
+            "fadeInUp": "Fade In Up"
         }
+    },
+    "entryAnimationDuration": {
+        "type": "number",
+        "label": "Duração da animação de entrada (ms)",
+        "value": 250
     },
     "messageAvatar": {
         "type": "dropdown",
-        "label": "Animação de entrada",
+        "label": "Avatar",
         "value": "show-avatar",
         "options": {
             "show-avatar": "Mostrar avatar",

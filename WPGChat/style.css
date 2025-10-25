@@ -25,7 +25,7 @@ html, body {
 /* <================================================[ SHARED STYLE ]================================================> */
 #main-container > div {
     position: relative;
-    animation: {{messageAnimation}};
+    animation: {{entryAnimation}} {{entryAnimationDuration}}ms ease-in;
 }
 
 #main-container > div:not(:first-child) {
@@ -84,14 +84,6 @@ html, body {
     display: none;
 }
 
-#main-container > .message-item.left > .author-meta {
-    left: calc(8px + (var(--badge-size) + 16px) + 16px);
-}
-
-#main-container > .message-item.right > .author-meta {
-    right: calc(8px + (var(--badge-size) + 16px) + 16px);
-}
-
 #main-container > .message-item > .author-meta {
     width: fit-content;
     max-width: calc(100vw - 64px);
@@ -108,6 +100,14 @@ html, body {
     background: var(--author-pill-bg);
 
     overflow: hidden;
+}
+
+#main-container > .message-item.left.show-avatar > .author-meta {
+    left: calc((var(--badge-size) + 16px) + 16px + 8px);
+}
+
+#main-container > .message-item.left:not(.show-avatar) > .author-meta {
+    left: calc(16px + 8px);
 }
 
 #main-container > .message-item > .author-meta > .badges {
