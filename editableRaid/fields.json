@@ -1,6 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/voguh/unichat/refs/tags/1.3.0/widgets/fields-schema.json",
-
+    "$schema": "https://cdn.statically.io/gh/voguh/unichat/1.3.0/widgets/fields-schema.json",
     "showOnPlatform": {
         "type": "dropdown",
         "label": "Show on platform",
