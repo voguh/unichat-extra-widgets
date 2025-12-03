@@ -1,0 +1,77 @@
+name: main.yaml
+
+on:
+  push:
+    tags:
+      - '*-v*.*.*'
+
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6.0.1
+      
+      - name: Prepare Release
+        id: prepare_release
+        run: |
+          TAG_NAME="${{ github.ref }}"
+          TAG_NAME="${TAG_NAME#refs/tags/}"
+          if [[ "$TAG_NAME" =~ ^([^-]+)-v([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+            FOLDER="${BASH_REMATCH[1]}"
+            VERSION="${BASH_REMATCH[2]}"
+            echo "Folder: $FOLDER"
+            echo "Version: $VERSION"
+            echo "folder=$FOLDER" >> $GITHUB_OUTPUT
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "Release tag does not match the required format <folder>-vX.Y.Z"
+            exit 1
+          fi
+      
+      - name: Check if folder exists
+        run: |
+          FOLDER="${{ steps.prepare_release.outputs.folder }}"
+          if [ ! -d "$GITHUB_WORKSPACE/$FOLDER" ]; then
+            echo "Folder '$FOLDER' does not exist in the repository."
+            exit 1
+          fi
+      
+      - name: Create manifest.yaml
+        run: |
+          FOLDER="${{ steps.prepare_release.outputs.folder }}"
+          VERSION="${{ steps.prepare_release.outputs.version }}"
+          MANIFEST_CONTENT="name: $FOLDER\nversion: $VERSION\nbuildId: $GITHUB_RUN_ID\nbuildBy: ${GITHUB_ACTOR}\nbuildAt: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          echo -e "$MANIFEST_CONTENT" > "$GITHUB_WORKSPACE/$FOLDER/manifest.yaml"
+          cat "$GITHUB_WORKSPACE/$FOLDER/manifest.yaml"
+      
+      - name: Copy license
+        run: |
+          FOLDER="${{ steps.prepare_release.outputs.folder }}"
+          cp "$GITHUB_WORKSPACE/LICENSE" "$GITHUB_WORKSPACE/$FOLDER/LICENSE"
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          echo "Creating GitHub Release for tag $TAG_NAME"
+          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          gh release create "$TAG_NAME" --prerelease
+
+      - name: Upload to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          FOLDER="${{ steps.prepare_release.outputs.folder }}"
+          if [ -n "$(command -v gh)" ]; then
+            echo "GitHub CLI is installed. Proceeding to upload files to GitHub Release."
+            echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+            gh release upload "$TAG_NAME" "$GITHUB_WORKSPACE/$FOLDER/"* --clobber
+            echo "All files uploaded to GitHub Release successfully."
+          else
+            echo "GitHub CLI is not installed. Skipping upload to GitHub Release."
+            exit 1
+          fi
+        
