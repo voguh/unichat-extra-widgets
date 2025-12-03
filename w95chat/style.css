@@ -249,17 +249,3 @@ html, body {
     font-weight: bold;
 }
 /* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */
-
-
-
-/* <=============================================[ RAID MESSAGE STYLE ]=============================================> */
-#main-container > .redemption-item > .event-item-header {
-    background: var(--redemption-background-color);
-    color: var(--redemption-text-color);
-}
-
-#main-container > .redemption-item > .event-item-body {
-    text-align: center;
-    font-weight: bold;
-}
-/* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */

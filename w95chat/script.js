@@ -69,7 +69,7 @@ function enrichMessage(text, data) {
             enrichedText = enrichedText.replaceAll(snakeKey, value);
             enrichedText = enrichedText.replace(platformConditionalRegExp, (match, platforms, option1, option2) => {
                 const [platform1, platform2] = platforms.split(',').map(p => p.trim());
-                
+
                 if (value === platform1.trim()) {
                     return option1;
                 } else if (value === platform2.trim()) {
@@ -126,7 +126,7 @@ window.addEventListener("unichat:event", function ({ detail: event }) {
     } else {
         let htmlTemplate;
 
-        if (event.type === "unichat:message") {
+        if (event.type === "unichat:message" || (event.type === "unichat:redemption" && event.data.messageText != null)) {
             /** @type {import("../unichat").UniChatEventMessage['data']} */
             const data = event.data;
 
@@ -155,12 +155,6 @@ window.addEventListener("unichat:event", function ({ detail: event }) {
 
             htmlTemplate = enrichMessage(RAID_TEMPLATE, data);
             htmlTemplate = htmlTemplate.replace("{raid_meta}", enrichMessage(RAID_TEMPLATE_MESSAGE, data));
-        } else if (event.type === "unichat:redemption") {
-            /** @type {import("../unichat").UniChatEventRedemption['data']} */
-            const data = event.data;
-
-            htmlTemplate = enrichMessage(REDEMPTION_TEMPLATE, data);
-            htmlTemplate = htmlTemplate.replace("{redemption_meta}", enrichMessage(REDEMPTION_TEMPLATE_MESSAGE, data));
         }
 
         if (htmlTemplate != null && MAIN_CONTAINER.querySelector(`div[data-id="${event.data.messageId}"]`) == null) {
