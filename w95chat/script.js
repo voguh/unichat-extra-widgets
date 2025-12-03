@@ -3,6 +3,7 @@ const SPONSOR_TEMPLATE_MESSAGE = "{{sponsorMessageText}}";
 const SPONSOR_GIFT_TEMPLATE_MESSAGE = "{{sponsorGiftMessageText}}";
 const RAID_TEMPLATE_MESSAGE = "{{raidMessageText}}";
 const RAID_VIEWER_COUNT_DEFAULT = "{{raidViewerCountDefault}}";
+const REDEMPTION_TEMPLATE_MESSAGE = "{{redemptionMessageText}}";
 
 /* ================================================================================================================== */
 
@@ -12,6 +13,7 @@ const DONATE_TEMPLATE = document.querySelector("#donate_item").innerHTML;
 const SPONSOR_TEMPLATE = document.querySelector("#sponsor_item").innerHTML;
 const SPONSOR_GIFT_TEMPLATE = document.querySelector("#sponsor-gift_item").innerHTML;
 const RAID_TEMPLATE = document.querySelector("#raid_item").innerHTML;
+const REDEMPTION_TEMPLATE = document.querySelector("#redemption_item").innerHTML;
 
 function buildBadges(badges) {
     let badgeJoin = ''
@@ -54,9 +56,6 @@ const platformConditionalRegExp = /\{if_platform\(([^)]+)\)::([^:}]*)::([^:{}]*)
 function enrichMessage(text, data) {
     /** @type {string} */
     let enrichedText = text;
-    if(enrichedText.includes('{if_platform')) {
-        console.log('Enriching message with data:', enrichedText);
-    }
 
     for (const [rawKey, value] of Object.entries(data)) {
         const key = `{${rawKey}}`;
@@ -156,6 +155,12 @@ window.addEventListener("unichat:event", function ({ detail: event }) {
 
             htmlTemplate = enrichMessage(RAID_TEMPLATE, data);
             htmlTemplate = htmlTemplate.replace("{raid_meta}", enrichMessage(RAID_TEMPLATE_MESSAGE, data));
+        } else if (event.type === "unichat:redemption") {
+            /** @type {import("../unichat").UniChatEventRedemption['data']} */
+            const data = event.data;
+
+            htmlTemplate = enrichMessage(REDEMPTION_TEMPLATE, data);
+            htmlTemplate = htmlTemplate.replace("{redemption_meta}", enrichMessage(REDEMPTION_TEMPLATE_MESSAGE, data));
         }
 
         if (htmlTemplate != null && MAIN_CONTAINER.querySelector(`div[data-id="${event.data.messageId}"]`) == null) {
