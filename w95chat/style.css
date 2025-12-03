@@ -1,7 +1,4 @@
 :root {
-    --badge-size: {{badgeSize}}px;
-    --emote-size: {{emoteSize}}px;
-
     --plt-black: #000000;
     --plt-maroon: #800000;
     --plt-green: #008000;
@@ -18,6 +15,34 @@
     --plt-fuchsia: #ff00ff;
     --plt-aqua: #00ffff;
     --plt-white: #ffffff;
+
+    /* <<== FIELDS TO CSS VARIABLES ==>> */
+    --message-animation: {{messageAnimation}};
+    --accent-color: {{accentColor}};
+
+    --emote-size: {{emoteSize}}px;
+    --default-background-color: {{defaultBackgroundColor}};
+    --default-text-color: {{defaultTextColor}};
+
+    --badge-size: {{badgeSize}}px;
+    --header-background-color: {{headerBackgroundColor}};
+    --header-text-color: {{headerTextColor}};
+
+    --donate-background-color: {{donateBackgroundColor}};
+    --donate-text-color: {{donateTextColor}};
+
+    --sponsor-background-color: {{sponsorBackgroundColor}};
+    --sponsor-text-color: {{sponsorTextColor}};
+
+    --sponsor-gift-background-color: {{sponsorGiftBackgroundColor}};
+    --sponsor-gift-text-color: {{sponsorGiftTextColor}};
+
+    --raid-background-color: {{raidBackgroundColor}};
+    --raid-text-color: {{raidTextColor}};
+
+    --redemption-background-color: {{redemptionBackgroundColor}};
+    --redemption-text-color: {{redemptionTextColor}};
+    /* <<== END FIELDS TO CSS VARIABLES ==>> */
 }
 
 html, body {
@@ -51,8 +76,8 @@ html, body {
     border-bottom: 2px solid color-mix(in srgb, var(--plt-black) 50%, transparent);
     border-right: 2px solid color-mix(in srgb, var(--plt-black) 50%, transparent);
     overflow: hidden;
-    background: {{defaultBackgroundColor}};
-    animation: {{messageAnimation}};
+    background: var(--default-background-color);
+    animation: var(--message-animation);
 }
 
 #main-container > div:not(:first-child) {
@@ -66,8 +91,8 @@ html, body {
     align-items: center;
     gap: 8px;
     padding: 4px;
-    background: {{headerBackgroundColor}};
-    color: {{headerTextColor}};
+    background: var(--header-background-color);
+    color: var(--header-text-color);
 }
 
 #main-container > div > .event-item-header > .badges {
@@ -112,8 +137,8 @@ html, body {
 }
 
 #main-container > div > .event-item-header > .controls > i {
-    color: color-mix(in srgb, {{defaultTextColor}} 75%, transparent);
-    background: color-mix(in srgb, {{defaultBackgroundColor}} 75%, transparent);
+    color: color-mix(in srgb, var(--default-text-color) 75%, transparent);
+    background: color-mix(in srgb, var(--default-background-color) 75%, transparent);
     padding: 4px;
     width: calc(var(--badge-size) - 12px);
     height: calc(var(--badge-size) - 12px);
@@ -136,7 +161,7 @@ html, body {
 
 #main-container > div > .event-item-body {
     padding: 8px;
-    color: {{defaultTextColor}};
+    color: var(--default-text-color);
     white-space: normal;
     word-break: break-word;
 }
@@ -150,7 +175,7 @@ html, body {
 #main-container > div > .event-item-body > div[class*="meta"] > span {
     font-weight: bold;
     font-size: 18px;
-    color: {{accentColor}};
+    color: var(--accent-color);
 }
 
 #main-container > div > .event-item-body > .message {
@@ -183,8 +208,8 @@ html, body {
 
 /* <============================================[ DONATE MESSAGE STYLE ]============================================> */
 #main-container > .donate-item > .event-item-header {
-    background: {{donateBackgroundColor}};
-    color: {{donateTextColor}};
+    background: var(--donate-background-color);
+    color: var(--donate-text-color);
 }
 /* <==========================================[ END DONATE MESSAGE STYLE ]==========================================> */
 
@@ -192,8 +217,8 @@ html, body {
 
 /* <============================================[ SPONSOR MESSAGE STYLE ]============================================> */
 #main-container > .sponsor-item > .event-item-header {
-    background: {{sponsorBackgroundColor}};
-    color: {{sponsorTextColor}};
+    background: var(--sponsor-background-color);
+    color: var(--sponsor-text-color);
 }
 /* <==========================================[ END SPONSOR MESSAGE STYLE ]==========================================> */
 
@@ -201,8 +226,8 @@ html, body {
 
 /* <=========================================[ SPONSOR GIFT MESSAGE STYLE ]=========================================> */
 #main-container > .spogift-item > .event-item-header {
-    background: {{sponsorGiftBackgroundColor}};
-    color: {{sponsorGiftTextColor}};
+    background: var(--sponsor-gift-background-color);
+    color: var(--sponsor-gift-text-color);
 }
 
 #main-container > .spogift-item > .event-item-body {
@@ -215,11 +240,25 @@ html, body {
 
 /* <=============================================[ RAID MESSAGE STYLE ]=============================================> */
 #main-container > .raid-item > .event-item-header {
-    background: var(--plt-green);
-    color: var(--plt-white);
+    background: var(--raid-background-color);
+    color: var(--raid-text-color);
 }
 
 #main-container > .raid-item > .event-item-body {
+    text-align: center;
+    font-weight: bold;
+}
+/* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */
+
+
+
+/* <=============================================[ RAID MESSAGE STYLE ]=============================================> */
+#main-container > .redemption-item > .event-item-header {
+    background: var(--redemption-background-color);
+    color: var(--redemption-text-color);
+}
+
+#main-container > .redemption-item > .event-item-body {
     text-align: center;
     font-weight: bold;
 }

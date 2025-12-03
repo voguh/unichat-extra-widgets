@@ -27,7 +27,6 @@
         "label": "Tamanho do Emote",
         "value": 28
     },
-
     "defaultBackgroundColor": {
         "type": "colorpicker",
         "group": "Mensagem",
@@ -49,7 +48,6 @@
         "label": "Tamanho da Badge",
         "value": 18
     },
-
     "headerBackgroundColor": {
         "type": "colorpicker",
         "group": "Decorador da janela",
@@ -155,6 +153,29 @@
         "value": "#000080"
     },
     "raidTextColor": {
+        "type": "colorpicker",
+        "group": "Evento de Raid",
+        "label": "Cor do texto",
+        "description": "Cor utilizada no decorador da janela",
+        "value": "#FFFFFF"
+    },
+
+
+
+    "redemptionMessageText": {
+        "type": "textarea",
+        "group": "Evento de Raid",
+        "label": "Message template",
+        "value": "<span>{author_display_name}</span> acabou de resgatar {rewardTitle} por {rewardCost} pontos!"
+    },
+    "redemptionBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Evento de Raid",
+        "label": "Cor de fundo",
+        "description": "Cor utilizada no decorador da janela",
+        "value": "#000080"
+    },
+    "redemptionTextColor": {
         "type": "colorpicker",
         "group": "Evento de Raid",
         "label": "Cor do texto",
