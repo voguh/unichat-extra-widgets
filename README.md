@@ -6,7 +6,7 @@ Este repositório tem o propósito de conter widgets gratuitos e livres para o u
 
 ### [EditableDefault](./editableDefault)
 
-Uma versão editável do widget padrão do UniChat
+Uma versão editável do widget padrão de chat do UniChat
 
 <table>
   <tbody>
@@ -28,7 +28,7 @@ Uma versão editável do widget padrão do UniChat
 
 ### [EditableRaid](./editableRaid)
 
-Uma versão editável do widget padrão do UniChat
+Uma versão editável do widget padrão de alerta de raid do UniChat
 
 <table>
   <tbody>
