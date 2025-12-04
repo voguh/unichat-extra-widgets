@@ -3,7 +3,6 @@ const SPONSOR_TEMPLATE_MESSAGE = "{{sponsorMessageText}}";
 const SPONSOR_GIFT_TEMPLATE_MESSAGE = "{{sponsorGiftMessageText}}";
 const RAID_TEMPLATE_MESSAGE = "{{raidMessageText}}";
 const RAID_VIEWER_COUNT_DEFAULT = "{{raidViewerCountDefault}}";
-const REDEMPTION_TEMPLATE_MESSAGE = "{{redemptionMessageText}}";
 
 /* ================================================================================================================== */
 
@@ -13,7 +12,6 @@ const DONATE_TEMPLATE = document.querySelector("#donate_item").innerHTML;
 const SPONSOR_TEMPLATE = document.querySelector("#sponsor_item").innerHTML;
 const SPONSOR_GIFT_TEMPLATE = document.querySelector("#sponsor-gift_item").innerHTML;
 const RAID_TEMPLATE = document.querySelector("#raid_item").innerHTML;
-const REDEMPTION_TEMPLATE = document.querySelector("#redemption_item").innerHTML;
 
 function buildBadges(badges) {
     let badgeJoin = ''
