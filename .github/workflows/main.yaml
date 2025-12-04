@@ -51,14 +51,6 @@ jobs:
           FOLDER="${{ steps.prepare_release.outputs.folder }}"
           cp "$GITHUB_WORKSPACE/LICENSE" "$GITHUB_WORKSPACE/$FOLDER/LICENSE"
 
-      - name: Create GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          echo "Creating GitHub Release for tag $TAG_NAME"
-          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-          gh release create "$TAG_NAME" --prerelease
-
       - name: Zip Release Folder
         run: |
           TAG_NAME="${GITHUB_REF#refs/tags/}"
@@ -68,13 +60,14 @@ jobs:
           zip -r "$ZIP_FILE" "$FOLDER"
           echo "Created zip file at $ZIP_FILE"
 
-      - name: Upload to GitHub Release
+      - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           if [ -n "$(command -v gh)" ]; then
-            echo "GitHub CLI is installed. Proceeding to upload files to GitHub Release."
+            echo "Creating GitHub Release for tag $TAG_NAME"
             echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+            gh release create "$TAG_NAME" --prerelease
             gh release upload "$TAG_NAME" "$GITHUB_WORKSPACE/$TAG_NAME.zip" --clobber
             echo "All files uploaded to GitHub Release successfully."
           else
