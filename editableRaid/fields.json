@@ -44,9 +44,10 @@
         "value": "#f8f9fa"
     },
     "sfxUrl": {
-        "type": "text",
-        "label": "Sound effect URL",
-        "value": "https://www.myinstants.com/media/sounds/america-ya-hallo.mp3"
+        "type": "filepicker",
+        "label": "Sound effect",
+        "value": "https://www.myinstants.com/media/sounds/america-ya-hallo.mp3",
+        "fileType": ["audio"]
     },
 
 
