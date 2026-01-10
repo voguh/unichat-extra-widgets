@@ -1,8 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-    --badge-size: {{badgeSize}}px;
+
+    /* <<== FIELDS TO CSS VARIABLES ==>> */
+    --entry-animation: {{entryAnimation}} {{entryAnimationDuration}}ms ease-in;
+    --accent-color: {{accentColor}};
+
     --emote-size: {{emoteSize}}px;
+    --default-background-color: {{defaultBackgroundColor}};
+    --default-text-color: {{defaultTextColor}};
+
+    --badge-size: {{badgeSize}}px;
+    --pill-background-color: {{pillBackgroundColor}};
+    --pill-text-color: {{pillTextColor}};
+    --sponsor-pill-background-color: {{sponsorPillBackgroundColor}};
+    --sponsor-pill-text-color: {{sponsorPillTextColor}};
+    --moderator-pill-background-color: {{moderatorPillBackgroundColor}};
+    --moderator-pill-text-color: {{moderatorPillTextColor}};
+    --broadcaster-pill-background-color: {{broadcasterPillBackgroundColor}};
+    --broadcaster-pill-text-color: {{broadcasterPillTextColor}};
+
+    --donate-background-color: {{donateBackgroundColor}};
+    --donate-text-color: {{donateTextColor}};
+
+    --sponsor-background-color: {{sponsorBackgroundColor}};
+    --sponsor-text-color: {{sponsorTextColor}};
+
+    --sponsor-gift-background-color: {{sponsorGiftBackgroundColor}};
+    --sponsor-gift-text-color: {{sponsorGiftTextColor}};
+
+    --raid-background-color: {{raidBackgroundColor}};
+    --raid-text-color: {{raidTextColor}};
+
+    --redemption-background-color: {{redemptionBackgroundColor}};
+    --redemption-text-color: {{redemptionTextColor}};
+    /* <<== END FIELDS TO CSS VARIABLES ==>> */
 }
 
 html, body {
@@ -25,7 +57,7 @@ html, body {
 /* <================================================[ SHARED STYLE ]================================================> */
 #main-container > div {
     position: relative;
-    animation: {{entryAnimation}} {{entryAnimationDuration}}ms ease-in;
+    animation: var(--entry-animation);
 }
 
 #main-container > div:not(:first-child) {
@@ -35,24 +67,24 @@ html, body {
 
 /* <============================================[ SIMPLE MESSAGE STYLE ]============================================> */
 #main-container > .message-item {
-    --author-pill-bg: {{pillBackgroundColor}};
-    --author-pill-color: {{pillTextColor}};
+    --author-pill-bg: var(--pill-background-color);
+    --author-pill-color: var(--pill-text-color);
     margin-top: calc(((var(--badge-size) + 8px) / 2) + 8px) !important;
 }
 
 #main-container > .message-item.message-item--SPONSOR {
-    --author-pill-bg: {{sponsorPillBackgroundColor}};
-    --author-pill-color: {{sponsorPillTextColor}};
+    --author-pill-bg: var(--sponsor-pill-background-color);
+    --author-pill-color: var(--sponsor-pill-text-color);
 }
 
 #main-container > .message-item.message-item--MODERATOR {
-    --author-pill-bg: {{moderatorPillBackgroundColor}};
-    --author-pill-color: {{moderatorPillTextColor}};
+    --author-pill-bg: var(--moderator-pill-background-color);
+    --author-pill-color: var(--moderator-pill-text-color);
 }
 
 #main-container > .message-item.message-item--BROADCASTER {
-    --author-pill-bg: {{broadcasterPillBackgroundColor}};
-    --author-pill-color: {{broadcasterPillTextColor}};
+    --author-pill-bg: var(--broadcaster-pill-background-color);
+    --author-pill-color: var(--broadcaster-pill-text-color);
 }
 
 #main-container > .message-item > .author-avatar {
@@ -142,8 +174,8 @@ html, body {
 #main-container > .message-item > .message {
     padding: calc(((var(--badge-size) + 8px) / 2) + 8px) 8px 8px 8px;
     border-radius: 4px;
-    background: {{defaultBackgroundColor}};
-    color: {{defaultTextColor}};
+    background: var(--default-background-color);
+    color: var(--default-text-color);
     white-space: normal;
     word-break: break-word;
 }
@@ -172,7 +204,7 @@ html, body {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid {{defaultBackgroundColor}};
+    border-bottom: 8px solid var(--default-background-color);
 }
 
 #main-container > .message-item.left.show-avatar > .message::before {
@@ -203,8 +235,8 @@ html, body {
 
 /* <============================================[ DONATE MESSAGE STYLE ]============================================> */
 #main-container > .donate-item {
-    background: {{donateBackgroundColor}};
-    color: {{donateTextColor}};
+    background: var(--donate-background-color);
+    color: var(--donate-text-color);
     border-radius: 4px;
 }
 
@@ -265,8 +297,8 @@ html, body {
 
 /* <============================================[ SPONSOR MESSAGE STYLE ]============================================> */
 #main-container > .sponsor-item {
-    background: {{sponsorBackgroundColor}};
-    color: {{sponsorTextColor}};
+    background: var(--sponsor-background-color);
+    color: var(--sponsor-text-color);
     border-radius: 4px;
 }
 
@@ -327,8 +359,8 @@ html, body {
 
 /* <=========================================[ SPONSOR GIFT MESSAGE STYLE ]=========================================> */
 #main-container > .spogift-item {
-    background: {{sponsorGiftBackgroundColor}};
-    color: {{sponsorGiftTextColor}};
+    background: var(--sponsor-gift-background-color);
+    color: var(--sponsor-gift-text-color);
     border-radius: 4px;
 }
 
@@ -373,8 +405,8 @@ html, body {
 
 /* <=============================================[ RAID MESSAGE STYLE ]=============================================> */
 #main-container > .raid-item {
-    background: {{raidBackgroundColor}};
-    color: {{raidTextColor}};
+    background: var(--raid-background-color);
+    color: var(--raid-text-color);
     border-radius: 4px;
 }
 
@@ -416,3 +448,65 @@ html, body {
     opacity: 0.75;
 }
 /* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */
+
+/* <==========================================[ REDEMPTION MESSAGE STYLE ]==========================================> */
+#main-container > .redemption-item {
+    background: var(--redemption-background-color);
+    color: var(--redemption-text-color);
+    border-radius: 4px;
+}
+
+#main-container > .redemption-item > .element-item-header {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+#main-container > .redemption-item > .element-item-header > .author-photo {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-container > .redemption-item > .element-item-header > .author-photo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#main-container > .redemption-item > .element-item-header > .author-meta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#main-container > .redemption-item > .element-item-header > .author-meta > .title {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+#main-container > .redemption-item > .element-item-header > .author-meta > .subtitle {
+    font-weight: bolder;
+    opacity: 0.75;
+}
+
+#main-container > .redemption-item > .element-item-body {
+    padding: 8px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > .redemption-item > .element-item-body:empty {
+    display: none;
+}
+
+#main-container > .redemption-item > .element-item-body > img {
+    height: var(--emote-size);
+    vertical-align: middle;
+}
+/* <========================================[ END REDEMPTION MESSAGE STYLE ]========================================> */

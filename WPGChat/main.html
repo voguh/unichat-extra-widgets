@@ -72,3 +72,18 @@
         </div>
     </div>
 </script>
+
+<script type="text/template" id="redemption_item">
+    <div class="redemption-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
+        <div class="element-item-header">
+            <div class="author-photo">
+                <img src="{author_profile_picture_url}" style="background:{author_display_color};" onerror="this.onerror=null; this.src=`${window.location.pathname}/assets/dummy-avatar.png`;" alt="{author_display_name}"/>
+            </div>
+            <div class="author-meta">
+                <div class="title">{author_display_name}</div>
+                <div class="subtitle">{redemption_meta}</div>
+            </div>
+        </div>
+        <div class="element-item-body">{message_text}</div>
+    </div>
+</script>
