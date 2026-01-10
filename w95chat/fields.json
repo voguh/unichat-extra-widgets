@@ -1,5 +1,5 @@
 {
-    "$schema": "https://cdn.statically.io/gh/voguh/unichat/1.3.0/widgets/fields-schema.json",
+    "$schema": "https://cdn.statically.io/gh/voguh/unichat/1.4.0-beta.4/widgets/fields-schema.json",
     "messageAnimation": {
         "type": "dropdown",
         "label": "Animação de entrada",
@@ -155,6 +155,29 @@
     "raidTextColor": {
         "type": "colorpicker",
         "group": "Evento de Raid",
+        "label": "Cor do texto",
+        "description": "Cor utilizada no decorador da janela",
+        "value": "#FFFFFF"
+    },
+
+
+
+    "redemptionMessageText": {
+        "type": "textarea",
+        "group": "Evento de Redemption",
+        "label": "Message template",
+        "value": "Resgatou <span>{reward_title}</span>!"
+    },
+    "redemptionBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Evento de Redemption",
+        "label": "Cor de fundo",
+        "description": "Cor utilizada no decorador da janela",
+        "value": "#000080"
+    },
+    "redemptionTextColor": {
+        "type": "colorpicker",
+        "group": "Evento de Redemption",
         "label": "Cor do texto",
         "description": "Cor utilizada no decorador da janela",
         "value": "#FFFFFF"

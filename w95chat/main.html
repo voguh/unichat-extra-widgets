@@ -80,3 +80,21 @@
         <div class="event-item-body">{raid_meta}</div>
     </div>
 </script>
+
+<script type="text/template" id="redemption_item">
+    <div class="redemption-item" data-from="{author_id}" data-platform="{platform}" data-id="{message_id}">
+        <div class="event-item-header">
+            <span class="badges">{author_badges}</span>
+            <span class="name">{author_display_name}</span>
+            <span class="controls">
+                <i class="fas fa-window-minimize"></i>
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+
+        <div class="event-item-body">
+            <div class="redemption-meta">{redemption_meta}</div>
+            <div class="message">{message_text}</div>
+        </div>
+    </div>
+</script>

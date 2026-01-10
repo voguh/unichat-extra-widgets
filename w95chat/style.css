@@ -39,6 +39,9 @@
 
     --raid-background-color: {{raidBackgroundColor}};
     --raid-text-color: {{raidTextColor}};
+
+    --redemption-background-color: {{redemptionBackgroundColor}};
+    --redemption-text-color: {{redemptionTextColor}};
     /* <<== END FIELDS TO CSS VARIABLES ==>> */
 }
 
@@ -246,3 +249,12 @@ html, body {
     font-weight: bold;
 }
 /* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */
+
+
+
+/* <==========================================[ REDEMPTION MESSAGE STYLE ]==========================================> */
+#main-container > .redemption-item > .event-item-header {
+    background: var(--redemption-background-color);
+    color: var(--redemption-text-color);
+}
+/* <========================================[ END REDEMPTION MESSAGE STYLE ]========================================> */
