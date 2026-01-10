@@ -31,6 +31,9 @@
 
     --raid-background-color: {{raidBackgroundColor}};
     --raid-text-color: {{raidTextColor}};
+
+    --redemption-background-color: {{redemptionBackgroundColor}};
+    --redemption-text-color: {{redemptionTextColor}};
     /* <<== END FIELDS TO CSS VARIABLES ==>> */
 }
 
@@ -304,3 +307,53 @@ html, body {
     font-weight: bolder;
 }
 /* <===========================================[ END RAID MESSAGE STYLE ]===========================================> */
+
+/* <==========================================[ REDEMPTION MESSAGE STYLE ]==========================================> */
+#main-container > .redemption-item {
+    margin-top: var(--margin-top);
+    position: relative;
+}
+
+#main-container > .redemption-item > .author-meta {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#main-container > .redemption-item > .message-wrapper {
+    padding: var(--margin-top) var(--general-padding) var(--general-padding) var(--general-padding);
+    border-radius: var(--general-border-radius);
+    background: var(--redemption-background-color);
+    color: var(--redemption-text-color);
+    box-shadow: var(--general-box-shadow);
+}
+
+#main-container > .redemption-item > .message-wrapper > .redemption-meta {
+    font-weight: bold;
+    text-align: center;
+}
+
+#main-container > .redemption-item > .message-wrapper > .redemption-meta > span {
+    font-weight: bolder;
+    color: var(--accent-color);
+}
+
+#main-container > .redemption-item > .message-wrapper > .message {
+    width: calc(100vw - (var(--general-padding) * 6));
+    margin-top: var(--general-padding);
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: var(--general-border-radius);
+    padding: var(--general-padding);
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+}
+
+#main-container > .redemption-item > .message-wrapper > .message:empty {
+    display: none;
+}
+
+#main-container > .redemption-item > .message-wrapper > .message > img {
+    height: var(--emote-size);
+    vertical-align: middle;
+}
+/* <========================================[ END REDEMPTION MESSAGE STYLE ]========================================> */

@@ -1,5 +1,5 @@
 {
-    "$schema": "https://cdn.statically.io/gh/voguh/unichat/1.3.0/widgets/fields-schema.json",
+    "$schema": "https://cdn.statically.io/gh/voguh/unichat/1.4.0-beta.4/widgets/fields-schema.json",
     "platformBadge": {
         "type": "checkbox",
         "label": "Show platform badge",
@@ -126,7 +126,7 @@
     },
 
 
-    
+
     "emoteSize": {
         "type": "number",
         "group": "Message Content",
@@ -167,7 +167,7 @@
     },
 
 
-    
+
     "sponsorTemplateMessage": {
         "type": "textarea",
         "group": "Sponsor Event",
@@ -188,7 +188,7 @@
     },
 
 
-    
+
     "sponsorGiftTemplateMessage": {
         "type": "textarea",
         "group": "Sponsor Gift Event",
@@ -209,7 +209,7 @@
     },
 
 
-    
+
     "raidTemplateMessage": {
         "type": "textarea",
         "group": "Raid Event",
@@ -232,6 +232,27 @@
     "raidTextColor": {
         "type": "colorpicker",
         "group": "Raid Event",
+        "label": "Text color",
+        "value": "#f8f9fa"
+    },
+
+
+
+    "redemptionTemplateMessage": {
+        "type": "textarea",
+        "group": "Redemption Event",
+        "label": "Template message",
+        "value": "Just redeemed a reward: <span>{reward_title}</span>!"
+    },
+    "redemptionBackgroundColor": {
+        "type": "colorpicker",
+        "group": "Redemption Event",
+        "label": "Background color",
+        "value": "#339af0"
+    },
+    "redemptionTextColor": {
+        "type": "colorpicker",
+        "group": "Redemption Event",
         "label": "Text color",
         "value": "#f8f9fa"
     }
