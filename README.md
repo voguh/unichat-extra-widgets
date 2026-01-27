@@ -2,9 +2,17 @@
 
 Este repositório tem o propósito de conter widgets gratuitos e livres para o uso e customização compatíveis com o [UniChat](https://github.com/voguh/unichat).
 
+> [!IMPORTANT]
+> Este repositório esta sendo separado e movido para a organização [UniChat Community](https://github.com/unichat-community).
+>
+> Novo repositório para o [`editableDefault`](https://github.com/unichat-community/unichat-widget-editableDefault)
+
 ---
 
 ### [EditableDefault](./editableDefault)
+
+> [!IMPORTANT]
+> Novo repositório para o [`editableDefault`](https://github.com/unichat-community/unichat-widget-editableDefault)
 
 Uma versão editável do widget padrão de chat do UniChat
 
