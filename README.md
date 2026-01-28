@@ -6,6 +6,7 @@ Este repositório tem o propósito de conter widgets gratuitos e livres para o u
 > Este repositório esta sendo separado e movido para a organização [UniChat Community](https://github.com/unichat-community).
 >
 > Novo repositório para o [`editableDefault`](https://github.com/unichat-community/unichat-widget-editableDefault)
+> Novo repositório para o [`editableRaid`](https://github.com/unichat-community/unichat-widget-editableRaid)
 
 ---
 
@@ -35,6 +36,9 @@ Uma versão editável do widget padrão de chat do UniChat
 ---
 
 ### [EditableRaid](./editableRaid)
+
+> [!IMPORTANT]
+> Novo repositório para o [`editableRaid`](https://github.com/unichat-community/unichat-widget-editableRaid)
 
 Uma versão editável do widget padrão de alerta de raid do UniChat
 
