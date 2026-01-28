@@ -5,8 +5,8 @@ Este repositório tem o propósito de conter widgets gratuitos e livres para o u
 > [!IMPORTANT]
 > Este repositório esta sendo separado e movido para a organização [UniChat Community](https://github.com/unichat-community).
 >
-> Novo repositório para o [`editableDefault`](https://github.com/unichat-community/unichat-widget-editableDefault)
-> Novo repositório para o [`editableRaid`](https://github.com/unichat-community/unichat-widget-editableRaid)
+> - Novo repositório para o [`editableDefault`](https://github.com/unichat-community/unichat-widget-editableDefault)
+> - Novo repositório para o [`editableRaid`](https://github.com/unichat-community/unichat-widget-editableRaid)
 
 ---
 
