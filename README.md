@@ -8,6 +8,7 @@ Este repositório tem o propósito de conter widgets gratuitos e livres para o u
 > - Novo repositório para o [`editableDefault`](https://github.com/unichat-community/unichat-widget-editableDefault)
 > - Novo repositório para o [`editableRaid`](https://github.com/unichat-community/unichat-widget-editableRaid)
 > - Novo repositório para o [`w95chat`](https://github.com/unichat-community/unichat-widget-w95chat)
+> - Novo repositório para o [`WPGChat`](https://github.com/unichat-community/unichat-widget-WPGChat)
 
 ---
 
@@ -88,6 +89,9 @@ Um widget de chat inspirado no estilo do Windows 95.
 ---
 
 ### [WPGChat](./WPGChat)
+
+> [!IMPORTANT]
+> Novo repositório para o [`WPGChat`](https://github.com/unichat-community/unichat-widget-WPGChat)
 
 Este widget de chat apresenta as mensagens como se fossem conversas em um grupo de whatsapp.
 
