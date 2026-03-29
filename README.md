@@ -1,21 +1,21 @@
 # UniChat Extra Widgets
 
-Este repositório tem o propósito de conter widgets gratuitos e livres para o uso e customização compatíveis com o [UniChat](https://github.com/voguh/unichat).
+Este repositório tem o propósito de conter widgets gratuitos e livres para o uso e customização compatíveis com o [UniChat](https://codeberg.org/unichat/unichat).
 
 > [!IMPORTANT]
-> Este repositório esta sendo separado e movido para a organização [UniChat Community](https://github.com/unichat-community).
+> Este repositório esta sendo separado e movido para a organização [UniChat Community](https://codeberg.org/unichat-community).
 >
-> - Novo repositório para o [`editableDefault`](https://github.com/unichat-community/unichat-widget-editableDefault)
-> - Novo repositório para o [`editableRaid`](https://github.com/unichat-community/unichat-widget-editableRaid)
-> - Novo repositório para o [`w95chat`](https://github.com/unichat-community/unichat-widget-w95chat)
-> - Novo repositório para o [`WPGChat`](https://github.com/unichat-community/unichat-widget-WPGChat)
+> - Novo repositório para o [`editableDefault`](https://codeberg.org/unichat-community/unichat-widget-editableDefault)
+> - Novo repositório para o [`editableRaid`](https://codeberg.org/unichat-community/unichat-widget-editableRaid)
+> - Novo repositório para o [`w95chat`](https://codeberg.org/unichat-community/unichat-widget-w95chat)
+> - Novo repositório para o [`WPGChat`](https://codeberg.org/unichat-community/unichat-widget-WPGChat)
 
 ---
 
 ### [EditableDefault](./editableDefault)
 
 > [!IMPORTANT]
-> Novo repositório para o [`editableDefault`](https://github.com/unichat-community/unichat-widget-editableDefault)
+> Novo repositório para o [`editableDefault`](https://codeberg.org/unichat-community/unichat-widget-editableDefault)
 
 Uma versão editável do widget padrão de chat do UniChat
 
@@ -40,7 +40,7 @@ Uma versão editável do widget padrão de chat do UniChat
 ### [EditableRaid](./editableRaid)
 
 > [!IMPORTANT]
-> Novo repositório para o [`editableRaid`](https://github.com/unichat-community/unichat-widget-editableRaid)
+> Novo repositório para o [`editableRaid`](https://codeberg.org/unichat-community/unichat-widget-editableRaid)
 
 Uma versão editável do widget padrão de alerta de raid do UniChat
 
@@ -66,7 +66,7 @@ Uma versão editável do widget padrão de alerta de raid do UniChat
 ### [W95Chat](./w95chat)
 
 > [!IMPORTANT]
-> Novo repositório para o [`w95chat`](https://github.com/unichat-community/unichat-widget-w95chat)
+> Novo repositório para o [`w95chat`](https://codeberg.org/unichat-community/unichat-widget-w95chat)
 
 Um widget de chat inspirado no estilo do Windows 95.
 
@@ -91,7 +91,7 @@ Um widget de chat inspirado no estilo do Windows 95.
 ### [WPGChat](./WPGChat)
 
 > [!IMPORTANT]
-> Novo repositório para o [`WPGChat`](https://github.com/unichat-community/unichat-widget-WPGChat)
+> Novo repositório para o [`WPGChat`](https://codeberg.org/unichat-community/unichat-widget-WPGChat)
 
 Este widget de chat apresenta as mensagens como se fossem conversas em um grupo de whatsapp.
 
